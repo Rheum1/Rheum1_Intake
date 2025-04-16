@@ -5,18 +5,79 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to the Rheumatology Intake Portal</h1>
-    <p>This survey helps us better understand your symptoms before your appointment.</p>
+  <div <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rheumatology Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #e0f2fe, #ffffff);
+      color: #333;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+    .hero p {
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .cta-button {
+      background-color: #2563eb;
+      color: white;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #1e40af;
+    }
+    .small-text {
+      font-size: 0.875rem;
+      color: #666;
+      margin-top: 20px;
+    }
 
-    <h2>What happens next:</h2>
-    <ul>
-      <li>✅ Take a secure symptom survey</li>
-      <li>✅ Get a personalized encounter note + lab orders</li>
-      <li>✅ Bring these to your appointment</li>
-    </ul>
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
 
-    <a href="https://form.jotform.com/250214487408153" class="button" target="_blank">Take the Survey</a>
+  <section class="hero">
+    <h1>Understand Your Joint Health – Start with a Simple Survey</h1>
+    <p>
+      Get guidance on common rheumatologic symptoms and learn what steps to take next.
+      This tool is free, secure, and built to help you prepare for your rheumatology visit.
+    </p>
+    <a href="/survey" class="cta-button">Take the Survey</a>
+    <p class="small-text">No login required. No data is stored. Your privacy is our priority.</p>
+  </section>
+
+</body>
+</html>
+
   </div>
 </body>
 </html>
