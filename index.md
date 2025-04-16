@@ -7,7 +7,7 @@ title: Home
   <div class="container">
     <h1>Welcome to Rheum1</h1>
     <p>Your starting point for understanding rheumatologic care and accessing our survey.</p>
-    <a href="https://your-survey-link.com" class="btn">Start the Survey</a>
+    <a href="[https://your-survey-link.com](https://form.jotform.com/250214487408153)" class="btn">Start the Survey</a>
   </div>
 </section>
 
