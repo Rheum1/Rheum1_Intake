@@ -4,64 +4,55 @@
   <title>Rheumatology Intake Survey</title>
   <link rel="stylesheet" href="style.css">
   <style>
-  .conditions {
-    padding: 60px 20px;
-    background: #fff;
-    text-align: center;
-  }
-  .conditions h2 {
-    font-size: 2rem;
-    color: #1e3a8a;
-    margin-bottom: 40px;
-  }
   .grid-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
+    padding: 30px 0;
   }
-  .condition {
-    max-width: 250px;
-    border-radius: 15px;
-    overflow: hidden;
-    background: #f8f9fa;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+
+  .door-link {
     text-align: center;
-    position: relative;
+    text-decoration: none;
+    color: inherit;
+    width: 120px;
   }
-  .condition:hover {
-    transform: translateY(-6px) rotate(-1deg);
-    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+
+  .door-wrapper {
+    width: 120px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 0 auto 10px;
   }
-  .condition img {
+
+  .door {
     width: 100%;
-    height: auto;
-    transition: filter 0.3s ease;
+    height: 100%;
+    background: url('https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(30, 58, 138, 0.3);
+    transform-origin: left;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
   }
-  .condition:hover img {
-    filter: brightness(1.1) drop-shadow(0 0 5px #1e3a8a);
+
+  .door-wrapper:hover .door {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
   }
-  .condition figcaption {
-    font-size: 1.1rem;
+
+  .door-wrapper.clicked .door {
+    transform: rotateY(-75deg);
+  }
+
+  .label {
+    font-family: Arial, sans-serif;
+    color: #1e3a8a;
     font-weight: bold;
-    color: #333;
-    padding: 15px 10px 5px;
-  }
-  .enter-text {
-    font-size: 0.9rem;
-    color: #4f46e5;
-    opacity: 0;
-    transform: translateY(5px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    padding-bottom: 15px;
-  }
-  .condition:hover .enter-text {
-    opacity: 1;
-    transform: translateY(0);
+    font-size: 0.95rem;
   }
 </style>
+
 </head>
 <body>
 
@@ -80,40 +71,80 @@
 <section class="conditions">
   <h2>Explore Common Rheumatologic Conditions</h2>
   <div class="grid-container">
+<!-- fibromyalgia -->
+    <figure class="condition">
+  <a href="/fibromyalgia">
+    <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Fibromyalgia Room">
+    <figcaption>Fibromyalgia</figcaption>
+    <div class="enter-text">Enter this room →</div>
+  </a>
+</figure>
+<!-- Ankylosing Spondylitis -->
+<figure class="condition">
+  <a href="/ankylosing-spondylitis">
+    <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Ankylosing Spondylitis Room">
+    <figcaption>Ankylosing Spondylitis</figcaption>
+    <div class="enter-text">Enter this room →</div>
+  </a>
+</figure>
+    
     <!-- Rheumatoid Arthritis -->
-    <figure class="condition">
-      <a href="/rheumatoid-arthritis">
-        <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Rheumatoid Arthritis Room">
-        <figcaption>Rheumatoid Arthritis</figcaption>
-        <div class="enter-text">Enter this room →</div>
-      </a>
-    </figure>
+   <!-- Conditions Section with Animated Doors -->
+<section class="conditions">
+  <h2>Explore Common Rheumatologic Conditions</h2>
+  <div class="grid-container">
+
+    <!-- Rheumatoid Arthritis -->
+    <a href="/rheumatoid-arthritis" class="door-link">
+      <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
+        <div class="door"></div>
+      </div>
+      <p class="label">Rheumatoid Arthritis</p>
+    </a>
+
     <!-- Lupus -->
-    <figure class="condition">
-      <a href="/lupus">
-        <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Lupus Room">
-        <figcaption>Lupus</figcaption>
-        <div class="enter-text">Enter this room →</div>
-      </a>
-    </figure>
+    <a href="/lupus" class="door-link">
+      <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
+        <div class="door"></div>
+      </div>
+      <p class="label">Lupus</p>
+    </a>
+
     <!-- Gout -->
-    <figure class="condition">
-      <a href="/gout">
-        <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Gout Room">
-        <figcaption>Gout</figcaption>
-        <div class="enter-text">Enter this room →</div>
-      </a>
-    </figure>
+    <a href="/gout" class="door-link">
+      <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
+        <div class="door"></div>
+      </div>
+      <p class="label">Gout</p>
+    </a>
+
     <!-- Psoriatic Arthritis -->
-    <figure class="condition">
-      <a href="/psoriatic-arthritis">
-        <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Psoriatic Arthritis Room">
-        <figcaption>Psoriatic Arthritis</figcaption>
-        <div class="enter-text">Enter this room →</div>
-      </a>
-    </figure>
+    <a href="/psoriatic-arthritis" class="door-link">
+      <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
+        <div class="door"></div>
+      </div>
+      <p class="label">Psoriatic Arthritis</p>
+    </a>
+
+    <!-- Fibromyalgia -->
+    <a href="/fibromyalgia" class="door-link">
+      <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
+        <div class="door"></div>
+      </div>
+      <p class="label">Fibromyalgia</p>
+    </a>
+
+    <!-- Ankylosing Spondylitis -->
+    <a href="/ankylosing-spondylitis" class="door-link">
+      <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
+        <div class="door"></div>
+      </div>
+      <p class="label">Ankylosing Spondylitis</p>
+    </a>
+
   </div>
 </section>
+
 
 
 
