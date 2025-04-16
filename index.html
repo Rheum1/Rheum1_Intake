@@ -10,6 +10,7 @@
       background: linear-gradient(to bottom, #e0f2fe, #ffffff);
       color: #333;
     }
+    /* Hero Section */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -44,7 +45,6 @@
       color: #666;
       margin-top: 20px;
     }
-
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 1.75rem;
@@ -53,10 +53,50 @@
         font-size: 1rem;
       }
     }
+    /* Conditions Section */
+    .conditions {
+      padding: 60px 20px;
+      background: #fff;
+      text-align: center;
+    }
+    .conditions h2 {
+      font-size: 2rem;
+      color: #1e3a8a;
+      margin-bottom: 40px;
+    }
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .condition {
+      max-width: 400px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #f9f9f9;
+      transition: transform 0.3s ease;
+    }
+    .condition:hover {
+      transform: translateY(-5px);
+    }
+    .condition img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .condition figcaption {
+      padding: 15px;
+      font-size: 1.1rem;
+      color: #333;
+      background: #fff;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Understand Your Joint Health – Start with a Simple Survey</h1>
     <p>
@@ -67,6 +107,35 @@
     <p class="small-text">No login required. No data is stored. Your privacy is our priority.</p>
   </section>
 
+  <!-- Conditions Section -->
+  <section class="conditions">
+    <h2>Explore Common Rheumatologic Conditions</h2>
+    <div class="grid-container">
+      <!-- Rheumatoid Arthritis -->
+      <figure class="condition">
+        <img src="https://source.unsplash.com/400x300/?rheumatoid+arthritis" alt="Rheumatoid Arthritis">
+        <figcaption>Rheumatoid Arthritis</figcaption>
+      </figure>
+      <!-- Lupus -->
+      <figure class="condition">
+        <img src="https://source.unsplash.com/400x300/?lupus" alt="Lupus">
+        <figcaption>Lupus</figcaption>
+      </figure>
+      <!-- Gout -->
+      <figure class="condition">
+        <img src="https://source.unsplash.com/400x300/?gout" alt="Gout">
+        <figcaption>Gout</figcaption>
+      </figure>
+      <!-- Psoriatic Arthritis -->
+      <figure class="condition">
+        <img src="https://source.unsplash.com/400x300/?psoriatic+arthritis" alt="Psoriatic Arthritis">
+        <figcaption>Psoriatic Arthritis</figcaption>
+      </figure>
+    </div>
+    <!-- Note: Images are sourced from Unsplash (free for commercial use) -->
+  </section>
+
 </body>
 </html>
+
 
