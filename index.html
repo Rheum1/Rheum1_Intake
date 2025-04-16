@@ -4,95 +4,64 @@
   <title>Rheumatology Intake Survey</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom, #e0f2fe, #ffffff);
-      color: #333;
-    }
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #1e3a8a;
-    }
-    .hero p {
-      font-size: 1.125rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-    }
-    .cta-button {
-      background-color: #2563eb;
-      color: white;
-      font-size: 1rem;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-    .cta-button:hover {
-      background-color: #1e40af;
-    }
-    .small-text {
-      font-size: 0.875rem;
-      color: #666;
-      margin-top: 20px;
-    }
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-    /* Conditions Section */
-    .conditions {
-      padding: 60px 20px;
-      background: #fff;
-      text-align: center;
-    }
-    .conditions h2 {
-      font-size: 2rem;
-      color: #1e3a8a;
-      margin-bottom: 40px;
-    }
-    .grid-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .condition {
-      max-width: 400px;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #f9f9f9;
-      transition: transform 0.3s ease;
-    }
-    .condition:hover {
-      transform: translateY(-5px);
-    }
-    .condition img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .condition figcaption {
-      padding: 15px;
-      font-size: 1.1rem;
-      color: #333;
-      background: #fff;
-    }
-  </style>
+  .conditions {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  .conditions h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 40px;
+  }
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .condition {
+    max-width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f8f9fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+  }
+  .condition:hover {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+  }
+  .condition img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+  }
+  .condition:hover img {
+    filter: brightness(1.1) drop-shadow(0 0 5px #1e3a8a);
+  }
+  .condition figcaption {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    padding: 15px 10px 5px;
+  }
+  .enter-text {
+    font-size: 0.9rem;
+    color: #4f46e5;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding-bottom: 15px;
+  }
+  .condition:hover .enter-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 </head>
 <body>
 
@@ -116,6 +85,7 @@
       <a href="/rheumatoid-arthritis">
         <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Rheumatoid Arthritis Room">
         <figcaption>Rheumatoid Arthritis</figcaption>
+        <div class="enter-text">Enter this room →</div>
       </a>
     </figure>
     <!-- Lupus -->
@@ -123,6 +93,7 @@
       <a href="/lupus">
         <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Lupus Room">
         <figcaption>Lupus</figcaption>
+        <div class="enter-text">Enter this room →</div>
       </a>
     </figure>
     <!-- Gout -->
@@ -130,6 +101,7 @@
       <a href="/gout">
         <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Gout Room">
         <figcaption>Gout</figcaption>
+        <div class="enter-text">Enter this room →</div>
       </a>
     </figure>
     <!-- Psoriatic Arthritis -->
@@ -137,6 +109,7 @@
       <a href="/psoriatic-arthritis">
         <img src="https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg" alt="Enter Psoriatic Arthritis Room">
         <figcaption>Psoriatic Arthritis</figcaption>
+        <div class="enter-text">Enter this room →</div>
       </a>
     </figure>
   </div>
