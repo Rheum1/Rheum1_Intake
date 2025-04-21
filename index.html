@@ -3,190 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rheum 1 - Rheumatology Intake Portal</title>
+  <title>Rheum1 | Rheumatology Intake Portal</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom, #e0f2fe, #ffffff);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fbfd url('https://www.transparenttextures.com/patterns/purty-wood.png');
       color: #333;
     }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #1e3a8a;
-    }
-
-    .hero p {
-      font-size: 1.125rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-    }
-
-    .cta-button {
-      background-color: #2563eb;
+    header {
+      background: linear-gradient(90deg, #336699, #4d88cc);
       color: white;
-      font-size: 1rem;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #1e40af;
-    }
-
-    .small-text {
-      font-size: 0.875rem;
-      color: #666;
-      margin-top: 20px;
-    }
-
-    /* Door Section */
-    .conditions {
-      padding: 40px 10px 60px;
-      background: #fff;
+      padding: 2rem;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
-    .conditions h2 {
-      font-size: 1.5rem;
-      color: #1e3a8a;
-      margin-bottom: 20px;
+    .section {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
-
-    .grid-container {
+    .section h2 {
+      color: #2f4f4f;
+      margin-top: 0;
+    }
+    .intro p {
+      font-size: 1.1rem;
+    }
+    .door-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 2rem;
+      padding-top: 1rem;
     }
-
-    .door-link {
-      text-align: center;
-      text-decoration: none;
-      color: inherit;
-      width: 80px;
-    }
-
-    .door-wrapper {
-      width: 80px;
-      height: 140px;
-      perspective: 1000px;
-      margin: 0 auto 6px;
-    }
-
     .door {
+      width: 120px;
+      text-align: center;
+    }
+    .door img {
       width: 100%;
-      height: 100%;
-      background: url('https://png.pngtree.com/png-clipart/20210311/original/pngtree-black-house-door-open-door-clipart-png-image_6020485.jpg') no-repeat center center;
-      background-size: cover;
       border-radius: 6px;
-      box-shadow: 0 0 6px rgba(30, 58, 138, 0.3);
-      transform-origin: left;
-      transition: transform 0.6s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-
-    .door-wrapper:hover .door {
-      box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+    .door img:hover {
+      transform: rotateY(10deg) scale(1.05);
     }
-
-    .door-wrapper.clicked .door {
-      transform: rotateY(-75deg);
-    }
-
-    .label {
-      font-family: Arial, sans-serif;
-      color: #1e3a8a;
+    .door-label {
+      margin-top: 0.5rem;
       font-weight: bold;
-      font-size: 0.75rem;
     }
-
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta a {
+      background: #336699;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
     footer {
       text-align: center;
+      padding: 1rem;
       font-size: 0.85rem;
-      color: #666;
-      padding: 20px;
+      color: #777;
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Understand Your Joint Health – Start with a Simple Survey</h1>
-    <p>
-      Get guidance on common rheumatologic symptoms and learn what steps to take next.
-      This tool secure, and built to help you prepare for your rheumatology visit.
-    </p>
-    <a href="https://form.jotform.com/250214487408153" class="cta-button" target="_blank">Take the Survey</a>
-    <p class="small-text">No login required. Your privacy is our priority.</p>
-  </section>
+<header>
+  <h1>Welcome to Rheum1</h1>
+  <p>A personalized rheumatology intake portal to streamline your care</p>
+</header>
 
-  <!-- Conditions with Animated Doors -->
-  <section class="conditions">
-    <h2>Explore Common Rheumatologic Conditions</h2>
-    <div class="grid-container">
+<section class="section intro">
+  <h2>Why Use This Site?</h2>
+  <p>
+    Rheum1 helps patients prepare for their rheumatology appointment by completing a secure symptom survey.
+    Based on your responses, we generate a personalized encounter note and a list of labs tailored to your needs —
+    saving time and ensuring your concerns are clearly communicated from day one.
+  </p>
+</section>
 
-      <a href="/rheumatoid-arthritis" class="door-link">
-        <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
-          <div class="door"></div>
-        </div>
-        <p class="label">Rheumatoid Arthritis</p>
-      </a>
-
-      <a href="/lupus" class="door-link">
-        <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
-          <div class="door"></div>
-        </div>
-        <p class="label">Lupus</p>
-      </a>
-
-      <a href="/gout" class="door-link">
-        <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
-          <div class="door"></div>
-        </div>
-        <p class="label">Gout</p>
-      </a>
-
-      <a href="/psoriatic-arthritis" class="door-link">
-        <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
-          <div class="door"></div>
-        </div>
-        <p class="label">Psoriatic Arthritis</p>
-      </a>
-
-      <a href="/fibromyalgia" class="door-link">
-        <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
-          <div class="door"></div>
-        </div>
-        <p class="label">Fibromyalgia</p>
-      </a>
-
-      <a href="/ankylosing-spondylitis" class="door-link">
-        <div class="door-wrapper" onclick="this.classList.toggle('clicked')">
-          <div class="door"></div>
-        </div>
-        <p class="label">Ankylosing Spondylitis</p>
-      </a>
-
+<section class="section">
+  <h2>Explore Rheumatologic Conditions</h2>
+  <div class="door-grid">
+    <div class="door">
+      <a href="/rooms/fibromyalgia.html"><img src="/assets/img/door.png" alt="Fibromyalgia"/></a>
+      <div class="door-label">Fibromyalgia</div>
     </div>
-  </section>
+    <div class="door">
+      <a href="/rooms/lupus.html"><img src="/assets/img/door.png" alt="Lupus"/></a>
+      <div class="door-label">Lupus</div>
+    </div>
+    <div class="door">
+      <a href="/rooms/ra.html"><img src="/assets/img/door.png" alt="RA"/></a>
+      <div class="door-label">Rheumatoid Arthritis</div>
+    </div>
+    <div class="door">
+      <a href="/rooms/spondylitis.html"><img src="/assets/img/door.png" alt="AS"/></a>
+      <div class="door-label">Spondyloarthritis</div>
+    </div>
+    <!-- Add more condition links here -->
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Rheum 1 | For educational use only. Not a substitute for medical advice.
-  </footer>
+<section class="section cta">
+  <h2>Start Your Symptom Survey</h2>
+  <p>This secure survey helps us understand your symptoms and generate the documents you'll need for your visit.</p>
+  <a href="https://form.jotform.com/250214487408153" target="_blank">Take the Survey</a>
+</section>
+
+<footer>
+  <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform and your private Google account.</p>
+</footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
