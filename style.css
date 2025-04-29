@@ -2,3 +2,13 @@ body {
   background: #f8f9fa;
   color: #333;
 }
+.door {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.door img {
+  width: 150px; /* adjust this as needed */
+  transition: opacity 0.3s ease;
+}
