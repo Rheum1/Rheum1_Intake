@@ -167,5 +167,15 @@
   <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform and your private Google account.</p>
 </footer>
 
+  <script>
+  function openDoor(element, targetUrl) {
+    const img = element.querySelector('img');
+    img.src = 'assets/img/door-open.png'; // Make sure the file exists
+    setTimeout(() => {
+      window.location.href = targetUrl;
+    }, 600);
+  }
+</script>
+
 </body>
 </html>
