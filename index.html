@@ -103,6 +103,50 @@
       font-size: 0.85rem;
       color: #777;
     }
+    /* How It Works */
+.steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+.step {
+  text-align: center;
+  flex: 1 1 200px;
+}
+.emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonials */
+.testimonials blockquote {
+  font-style: italic;
+  background: #f0f4f8;
+  border-left: 4px solid #4d88cc;
+  margin: 1rem auto;
+  padding: 1rem 1.5rem;
+  max-width: 700px;
+  border-radius: 6px;
+}
+
+/* FAQ Accordion */
+.faq details {
+  background: #f9fbfd;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.faq summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+.faq p {
+  margin-top: 0.5rem;
+}
+
   </style>
 </head>
 <body>
@@ -175,6 +219,50 @@
   <p>This secure survey helps us understand your symptoms and generate the documents you'll need for your visit.</p>
   <a href="https://form.jotform.com/250214487408153" target="_blank">Take the Survey</a>
 </section>
+
+  <section class="section how-it-works">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="emoji">✅</div>
+      <h3>Step 1</h3>
+      <p>Complete your secure symptom survey</p>
+    </div>
+    <div class="step">
+      <div class="emoji">📝</div>
+      <h3>Step 2</h3>
+      <p>Receive a personalized encounter note & lab plan</p>
+    </div>
+    <div class="step">
+      <div class="emoji">🧪</div>
+      <h3>Step 3</h3>
+      <p>Visit the Sterling lab center (9am–3pm)</p>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <h2>What Patients Are Saying</h2>
+  <blockquote>"This saved me 45 minutes at my first visit!"</blockquote>
+  <blockquote>"I finally felt like my symptoms were heard and understood."</blockquote>
+</section>
+
+<section class="section faq">
+  <h2>Frequently Asked Questions</h2>
+  <details>
+    <summary>Do I need insurance to use this?</summary>
+    <p>No. The symptom survey is free and available to all patients, regardless of insurance status.</p>
+  </details>
+  <details>
+    <summary>How is my data handled?</summary>
+    <p>Your data is processed securely through Jotform and stored privately in your Google account — not on this site.</p>
+  </details>
+  <details>
+    <summary>What if I already have labs from another provider?</summary>
+    <p>You can bring them to your appointment, but our survey ensures nothing important is missed.</p>
+  </details>
+</section>
+
   
 <footer>
   <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform and your private Google account.</p>
