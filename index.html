@@ -43,6 +43,7 @@
     .door {
       width: 120px;
       text-align: center;
+      cursor: pointer;
     }
     .door img {
       width: 100%;
@@ -90,7 +91,7 @@
   <h2>Why Use This Site?</h2>
   <p>
     Rheum1 helps patients prepare for their rheumatology appointment by completing a secure symptom survey.
-    Based on your responses, we generate a personalized encounter note and a list of labs tailored to your needs —
+    Based on your responses, we generate a personalized encounter note and a list of labs tailored to your needs — 
     saving time and ensuring your concerns are clearly communicated. Once the survey is completed please visit the Sterling center between the hours of 9am-3pm 
     for your lab drawing.  
   </p>
@@ -98,32 +99,31 @@
 
 <section class="section">
   <h2>Explore Rheumatologic Conditions</h2>
- <div class="door" onclick="openDoor(this, 'rooms/fibromyalgia.html')">
-  <img src="assets/img/door-closed.png" alt="Fibromyalgia"/>
-  <div class="door-label">Fibromyalgia</div>
-</div>
-<div class="door" onclick="openDoor(this, 'rooms/lupus.html')">
-  <img src="assets/img/door-closed.png" alt="Lupus"/>
-  <div class="door-label">Lupus</div>
-</div>
-<div class="door" onclick="openDoor(this, 'rooms/ra.html')">
-  <img src="assets/img/door-closed.png" alt="RA"/>
-  <div class="door-label">Rheumatoid Arthritis</div>
-</div>
-<div class="door" onclick="openDoor(this, 'rooms/spondylitis.html')">
-  <img src="assets/img/door-closed.png" alt="AS"/>
-  <div class="door-label">Spondyloarthritis</div>
-</div>
-<div class="door" onclick="openDoor(this, 'rooms/sjogrens.html')">
-  <img src="assets/img/door-closed.png" alt="Sjogrens"/>
-  <div class="door-label">Sjogren's</div>
-</div>
-<div class="door" onclick="openDoor(this, 'rooms/gout.html')">
-  <img src="assets/img/door-closed.png" alt="Gout"/>
-  <div class="door-label">Gout</div>
-</div>
-
-
+  <div class="door-grid">
+    <div class="door" onclick="openDoor(this, 'rooms/fibromyalgia.html')">
+      <img src="assets/img/door-closed.png" alt="Fibromyalgia"/>
+      <div class="door-label">Fibromyalgia</div>
+    </div>
+    <div class="door" onclick="openDoor(this, 'rooms/lupus.html')">
+      <img src="assets/img/door-closed.png" alt="Lupus"/>
+      <div class="door-label">Lupus</div>
+    </div>
+    <div class="door" onclick="openDoor(this, 'rooms/ra.html')">
+      <img src="assets/img/door-closed.png" alt="RA"/>
+      <div class="door-label">Rheumatoid Arthritis</div>
+    </div>
+    <div class="door" onclick="openDoor(this, 'rooms/spondylitis.html')">
+      <img src="assets/img/door-closed.png" alt="AS"/>
+      <div class="door-label">Spondyloarthritis</div>
+    </div>
+    <div class="door" onclick="openDoor(this, 'rooms/sjogrens.html')">
+      <img src="assets/img/door-closed.png" alt="Sjogrens"/>
+      <div class="door-label">Sjogren's</div>
+    </div>
+    <div class="door" onclick="openDoor(this, 'rooms/gout.html')">
+      <img src="assets/img/door-closed.png" alt="Gout"/>
+      <div class="door-label">Gout</div>
+    </div>
   </div>
 </section>
 
@@ -167,15 +167,20 @@
   <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform and your private Google account.</p>
 </footer>
 
-  <script>
+<!-- Door functionality script -->
+<script>
   function openDoor(element, targetUrl) {
     const img = element.querySelector('img');
-    img.src = 'assets/img/door-open.png'; // Make sure the file exists
+    img.src = 'assets/img/door-open.png'; // Adjust path if needed
     setTimeout(() => {
       window.location.href = targetUrl;
     }, 600);
   }
 </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
