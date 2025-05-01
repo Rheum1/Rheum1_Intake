@@ -19,16 +19,15 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     header img {
-      max-width: 180px;
+      max-width: 220px;
       margin-bottom: 1rem;
     }
     .logo {
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
     .section {
       max-width: 960px;
       margin: 2rem auto;
@@ -54,16 +53,31 @@
     .door {
       width: 120px;
       text-align: center;
+      position: relative;
     }
     .door img {
       width: 100%;
       border-radius: 6px;
       box-shadow: 0 0 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    .door img:hover {
-      transform: rotateY(10deg) scale(1.05);
+    .door a {
+      display: block;
+      position: relative;
+    }
+    .door img.closed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: opacity 0.4s ease;
+    }
+    .door img.open {
+      position: relative;
+      z-index: 0;
+    }
+    .door a:hover img.closed {
+      opacity: 0;
     }
     .door-label {
       margin-top: 0.5rem;
@@ -103,9 +117,7 @@
   <h2>Why Use This Site?</h2>
   <p>
     Rheum One helps patients prepare for their rheumatology appointment by completing a secure symptom survey.
-    Based on your responses, we generate a personalized encounter note and a list of labs tailored to your needs —
-    saving time and ensuring your concerns are clearly communicated. Once the survey is completed, please visit the Sterling center between the hours of 9am-3pm 
-    for your lab drawing.  
+    Based on your responses, we generate a personalized encounter note and a list of labs tailored to your needs — saving time and ensuring your concerns are clearly communicated. Once the survey is completed, please visit the Sterling center between the hours of 9am-3pm for your lab drawing.  
   </p>
 </section>
 
@@ -114,37 +126,43 @@
   <div class="door-grid">
     <div class="door">
       <a href="Rooms/fibromyalgia.html">
-        <img src="assets/img/door-closed.png" alt="Fibromyalgia" data-open="assets/img/door-open.png" onclick="openDoor(this)" />
+        <img class="open" src="assets/img/door-open.png" alt="Fibromyalgia" />
+        <img class="closed" src="assets/img/door-closed.png" alt="Fibromyalgia (Closed)" />
       </a>
       <div class="door-label">Fibromyalgia</div>
     </div>
     <div class="door">
       <a href="Rooms/lupus.html">
-        <img src="assets/img/door-closed.png" alt="Lupus" data-open="assets/img/door-open.png" onclick="openDoor(this)" />
+        <img class="open" src="assets/img/door-open.png" alt="Lupus" />
+        <img class="closed" src="assets/img/door-closed.png" alt="Lupus (Closed)" />
       </a>
       <div class="door-label">Lupus</div>
     </div>
     <div class="door">
       <a href="Rooms/ra.html">
-        <img src="assets/img/door-closed.png" alt="RA" data-open="assets/img/door-open.png" onclick="openDoor(this)" />
+        <img class="open" src="assets/img/door-open.png" alt="RA" />
+        <img class="closed" src="assets/img/door-closed.png" alt="RA (Closed)" />
       </a>
       <div class="door-label">Rheumatoid Arthritis</div>
     </div>
     <div class="door">
       <a href="Rooms/spondylitis.html">
-        <img src="assets/img/door-closed.png" alt="AS" data-open="assets/img/door-open.png" onclick="openDoor(this)" />
+        <img class="open" src="assets/img/door-open.png" alt="AS" />
+        <img class="closed" src="assets/img/door-closed.png" alt="AS (Closed)" />
       </a>
       <div class="door-label">Spondyloarthritis</div>
     </div>
     <div class="door">
       <a href="Rooms/sjogrens.html">
-        <img src="assets/img/door-closed.png" alt="Sjogrens" data-open="assets/img/door-open.png" onclick="openDoor(this)" />
+        <img class="open" src="assets/img/door-open.png" alt="Sjogrens" />
+        <img class="closed" src="assets/img/door-closed.png" alt="Sjogrens (Closed)" />
       </a>
       <div class="door-label">Sjogren's</div>
     </div>
     <div class="door">
       <a href="Rooms/gout.html">
-        <img src="assets/img/door-closed.png" alt="Gout" data-open="assets/img/door-open.png" onclick="openDoor(this)" />
+        <img class="open" src="assets/img/door-open.png" alt="Gout" />
+        <img class="closed" src="assets/img/door-closed.png" alt="Gout (Closed)" />
       </a>
       <div class="door-label">Gout</div>
     </div>
@@ -157,7 +175,6 @@
   <a href="https://form.jotform.com/250214487408153" target="_blank">Take the Survey</a>
 </section>
 
-<!-- Optional condition blurbs (or move to individual pages) -->
 <section class="section" id="fibromyalgia">
   <h2>Fibromyalgia</h2>
   <p>Fibromyalgia is a chronic condition characterized by widespread musculoskeletal pain, fatigue, and tenderness in localized areas. It often coexists with other conditions such as irritable bowel syndrome, depression, and anxiety. Management includes lifestyle adjustments, medications, and physical therapy.</p>
@@ -192,11 +209,6 @@
   <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform and your private Google account.</p>
 </footer>
 
-<script>
-  function openDoor(img) {
-    img.src = img.getAttribute("data-open");
-  }
-</script>
-
 </body>
 </html>
+
