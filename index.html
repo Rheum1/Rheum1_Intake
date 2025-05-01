@@ -18,6 +18,10 @@
       text-align: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+    header img {
+      max-width: 200px;
+      margin-bottom: 1rem;
+    }
     .section {
       max-width: 960px;
       margin: 2rem auto;
@@ -83,6 +87,7 @@
 <body>
 
 <header>
+  <img src="/assets/img/rheumlogo.png" alt="Rheum1 Logo" />
   <h1>Welcome to Rheum1</h1>
   <p>A personalized rheumatology intake portal to streamline your care</p>
 </header>
@@ -91,8 +96,8 @@
   <h2>Why Use This Site?</h2>
   <p>
     Rheum1 helps patients prepare for their rheumatology appointment by completing a secure symptom survey.
-    Based on your responses, we generate a personalized encounter note and a list of labs tailored to your needs — 
-    saving time and ensuring your concerns are clearly communicated. Once the survey is completed please visit the Sterling center between the hours of 9am-3pm 
+    Based on your responses, we generate a personalized encounter note and a list of labs tailored to your needs —
+    saving time and ensuring your concerns are clearly communicated. Once the survey is completed please visit the Sterling center between the hours of 9am–3pm 
     for your lab drawing.  
   </p>
 </section>
@@ -100,86 +105,8 @@
 <section class="section">
   <h2>Explore Rheumatologic Conditions</h2>
   <div class="door-grid">
-    <div class="door" onclick="openDoor(this, 'rooms/fibromyalgia.html')">
-      <img src="assets/img/door-closed.png" alt="Fibromyalgia"/>
-      <div class="door-label">Fibromyalgia</div>
-    </div>
-    <div class="door" onclick="openDoor(this, 'rooms/lupus.html')">
-      <img src="assets/img/door-closed.png" alt="Lupus"/>
-      <div class="door-label">Lupus</div>
-    </div>
-    <div class="door" onclick="openDoor(this, 'rooms/ra.html')">
-      <img src="assets/img/door-closed.png" alt="RA"/>
-      <div class="door-label">Rheumatoid Arthritis</div>
-    </div>
-    <div class="door" onclick="openDoor(this, 'rooms/spondylitis.html')">
-      <img src="assets/img/door-closed.png" alt="AS"/>
-      <div class="door-label">Spondyloarthritis</div>
-    </div>
-    <div class="door" onclick="openDoor(this, 'rooms/sjogrens.html')">
-      <img src="assets/img/door-closed.png" alt="Sjogrens"/>
-      <div class="door-label">Sjogren's</div>
-    </div>
-    <div class="door" onclick="openDoor(this, 'rooms/gout.html')">
-      <img src="assets/img/door-closed.png" alt="Gout"/>
-      <div class="door-label">Gout</div>
-    </div>
-  </div>
-</section>
-
-<section class="section cta">
-  <h2>Start Your Symptom Survey</h2>
-  <p>This secure survey helps us understand your symptoms and generate the documents you'll need for your visit.</p>
-  <a href="https://form.jotform.com/250214487408153" target="_blank">Take the Survey</a>
-</section>
-
-<section class="section" id="fibromyalgia">
-  <h2>Fibromyalgia</h2>
-  <p>Fibromyalgia is a chronic condition characterized by widespread musculoskeletal pain, fatigue, and tenderness in localized areas. It often coexists with other conditions such as irritable bowel syndrome, depression, and anxiety. Management includes lifestyle adjustments, medications, and physical therapy.</p>
-</section>
-
-<section class="section" id="lupus">
-  <h2>Lupus (Systemic Lupus Erythematosus)</h2>
-  <p>Lupus is an autoimmune disease in which the immune system attacks healthy tissues, affecting skin, joints, kidneys, and more. Symptoms can be mild or severe and include fatigue, joint pain, skin rashes, and organ inflammation. Treatment focuses on immunosuppression and symptom management.</p>
-</section>
-
-<section class="section" id="ra">
-  <h2>Rheumatoid Arthritis (RA)</h2>
-  <p>RA is a chronic inflammatory disorder that primarily affects joints. It can also damage other body systems. RA causes painful swelling that can result in bone erosion and joint deformity. Early diagnosis and targeted treatments (like DMARDs and biologics) are critical for disease control.</p>
-</section>
-
-<section class="section" id="spondylitis">
-  <h2>Spondyloarthritis</h2>
-  <p>Spondyloarthritis is a family of inflammatory rheumatic diseases that primarily affect the spine and, in some cases, the joints of the arms and legs. The hallmark feature is inflammation where ligaments and tendons attach to bones. Treatment may include NSAIDs, biologics, and physical therapy.</p>
-</section>
-
-<section class="section" id="sjogrens">
-  <h2>Sjogren's Syndrome</h2>
-  <p>Sjogren’s is an autoimmune disease that targets the glands responsible for producing moisture. Common symptoms are dry eyes and dry mouth, but it may also affect other organs. Management focuses on relieving dryness and controlling immune system activity.</p>
-</section>
-
-<section class="section" id="gout">
-  <h2>Gout</h2>
-  <p>Gout is a type of inflammatory arthritis characterized by sudden, severe attacks of pain, swelling, and redness in the joints, often the big toe. It is caused by high levels of uric acid in the blood. Treatment includes medications and lifestyle changes to manage uric acid levels.</p>
-</section>
-
-<footer>
-  <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform and your private Google account.</p>
-</footer>
-
-<!-- Door functionality script -->
-<script>
-  function openDoor(element, targetUrl) {
-    const img = element.querySelector('img');
-    img.src = 'assets/img/door-open.png'; // Adjust path if needed
-    setTimeout(() => {
-      window.location.href = targetUrl;
-    }, 600);
-  }
-</script>
-
-</body>
-</html>
+    <div class="door" onclick="enterRoom(this, 'rooms/fibromyalgia.html')">
+      <img src="/a
 
 
 </body>
