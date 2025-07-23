@@ -289,6 +289,30 @@
       border: 3px solid var(--primary-light);
     }
     
+    /* Resources Preview */
+    .resources-preview {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    
+    .resource-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    .feature {
+      flex: 1 1 200px;
+      max-width: 200px;
+    }
+    
+    .feature img {
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
+    
     /* Back to top button */
     .back-to-top {
       position: fixed;
@@ -331,6 +355,10 @@
       
       nav li {
         margin: 0.5rem 0;
+      }
+      
+      .door-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
     
@@ -391,43 +419,67 @@
 
 <section id="conditions" class="section">
   <h2>Explore Rheumatologic Conditions</h2>
+  <p>Click on any door below to enter our educational resource room for that condition:</p>
+  
   <div class="door-grid">
-    <a href="Rooms/fibromyalgia.html" class="door-link">
+    <a href="fibromyalgia.html" class="door-link">
       <div class="door" style="background-image: url('assets/img/door-closed.png');"
            onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
            onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
       <div class="door-label">Fibromyalgia</div>
     </a>
-    <a href="Rooms/lupus.html" class="door-link">
+    <a href="lupus.html" class="door-link">
       <div class="door" style="background-image: url('assets/img/door-closed.png');"
            onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
            onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
       <div class="door-label">Lupus</div>
     </a>
-    <a href="Rooms/ra.html" class="door-link">
+    <a href="ra.html" class="door-link">
       <div class="door" style="background-image: url('assets/img/door-closed.png');"
            onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
            onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
       <div class="door-label">Rheumatoid Arthritis</div>
     </a>
-    <a href="Rooms/spondylitis.html" class="door-link">
+    <a href="spondylitis.html" class="door-link">
       <div class="door" style="background-image: url('assets/img/door-closed.png');"
            onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
            onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
       <div class="door-label">Spondyloarthritis</div>
     </a>
-    <a href="Rooms/sjogrens.html" class="door-link">
+    <a href="sjogrens.html" class="door-link">
       <div class="door" style="background-image: url('assets/img/door-closed.png');"
            onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
            onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
       <div class="door-label">Sjogren's</div>
     </a>
-    <a href="Rooms/gout.html" class="door-link">
+    <a href="gout.html" class="door-link">
       <div class="door" style="background-image: url('assets/img/door-closed.png');"
            onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
            onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
       <div class="door-label">Gout</div>
     </a>
+  </div>
+  
+  <div class="resources-preview">
+    <h3>What You'll Find in Each Condition Room:</h3>
+    <div class="resource-features">
+      <div class="feature">
+        <img src="assets/img/video-icon.png" alt="Video icon">
+        <p>Educational videos from our rheumatologist</p>
+      </div>
+      <div class="feature">
+        <img src="assets/img/document-icon.png" alt="Document icon">
+        <p>Detailed condition information</p>
+      </div>
+      <div class="feature">
+        <img src="assets/img/symptom-icon.png" alt="Symptom icon">
+        <p>Symptom tracking guidance</p>
+      </div>
+      <div class="feature">
+        <img src="assets/img/download-icon.png" alt="Download icon">
+        <p>Printable resources</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -512,7 +564,7 @@
   </details>
   <details>
     <summary>How long does it take to get my lab order and encounter note?</summary>
-    <p>Documents are typically generated within 48 hours of survey completion. You'll receive an email notification with your next steps when they're ready.</p>
+    <p>Documents are typically generated within 48 hours of survey completion. You'll receive an email notification when they're ready.</p>
   </details>
 </section>
 
@@ -561,4 +613,3 @@
 
 </body>
 </html>
-
