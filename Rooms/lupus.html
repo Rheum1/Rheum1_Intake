@@ -1,79 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lupus | Rheum1</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lupus Resources | Rheum1</title>
+  <link rel="stylesheet" href="../css/styles.css">
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fbfd url('https://www.transparenttextures.com/patterns/purty-wood.png');
-      color: #333;
-    }
-    header {
-      background: linear-gradient(90deg, #336699, #4d88cc);
+    .room-header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/lupus-bg.jpg');
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 2rem;
+      padding: 4rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
     }
-    .section {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .section h2 {
-      color: #2f4f4f;
-      margin-top: 0;
-    }
-    .section p {
-      font-size: 1.1rem;
-    }
-    .back-home {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .back-home a {
-      background: #336699;
-      color: white;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      display: inline-block;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.85rem;
-      color: #777;
-    }
+    /* Shared styles same as fibromyalgia.html */
   </style>
 </head>
 <body>
+<!-- Header/Nav same as fibromyalgia.html -->
 
-<header>
-  <h1>Lupus (SLE)</h1>
-  <p>Understanding the autoimmune complexities of Lupus</p>
-</header>
-
-<section class="section">
-  <h2>About Lupus</h2>
-  <p>Lupus is an autoimmune disease in which the immune system attacks healthy tissues, affecting skin, joints, kidneys, and more. Symptoms can be mild or severe and include fatigue, joint pain, skin rashes, and organ inflammation. Treatment focuses on immunosuppression and symptom management.</p>
-</section>
-
-<div class="back-home">
-  <a href="/index.html">Back to Home</a>
+<div class="room-header">
+  <h1 class="room-title">Lupus Resource Room</h1>
+  <p class="room-subtitle">Understanding and managing systemic lupus erythematosus</p>
 </div>
 
-<footer>
-  <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform and your private Google account.</p>
-</footer>
+<div class="section">
+  <h2>Understanding Lupus</h2>
+  <p>Lupus is an autoimmune disease where the body's immune system attacks its own tissues, causing inflammation and tissue damage in multiple organ systems.</p>
+  
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+  </div>
+  
+  <h3>Key Features:</h3>
+  <ul>
+    <li>Butterfly-shaped facial rash</li>
+    <li>Joint pain and swelling</li>
+    <li>Photosensitivity</li>
+    <li>Kidney, heart, or lung involvement</li>
+  </ul>
 
+  <h2>Educational Resources</h2>
+  <div class="resources-grid">
+    <div class="resource-card">
+      <h3>Diagnosis Process</h3>
+      <p>Understanding the diagnostic criteria and tests for lupus.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <h3>Medication Guide</h3>
+      <p>Overview of lupus treatments including immunosuppressants.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <h3>Sun Protection</h3>
+      <p>Download our guide to managing photosensitivity.</p>
+      <a href="../downloads/lupus-sun-protection.pdf" class="download-link">Download PDF</a>
+    </div>
+    
+    <div class="resource-card">
+      <h3>Lab Monitoring</h3>
+      <p>Understanding your regular blood tests for lupus.</p>
+      <a href="../downloads/lupus-lab-guide.pdf" class="download-link">Download PDF</a>
+    </div>
+  </div>
+  
+  <a href="../index.html#conditions" class="back-button">← Back to All Conditions</a>
+</div>
+
+<!-- Footer same as fibromyalgia.html -->
 </body>
 </html>
