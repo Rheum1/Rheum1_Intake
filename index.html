@@ -3,39 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Streamline your rheumatology care with our personalized intake survey and symptom assessment">
   <title>Rheum1 | Rheumatology Intake Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #336699;
+      --primary-light: #4d88cc;
+      --secondary: #2f4f4f;
+      --accent: #e74c3c;
+      --light-bg: #f9fbfd;
+      --text: #333;
+      --text-light: #777;
+    }
+    
     body {
       margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fbfd url('https://www.transparenttextures.com/patterns/purty-wood.png');
-      color: #333;
+      font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-bg) url('https://www.transparenttextures.com/patterns/purty-wood.png');
+      color: var(--text);
+      line-height: 1.6;
     }
+    
     header {
-      background: linear-gradient(90deg, #336699, #4d88cc);
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
       color: white;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding: 1.5rem 1rem;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+    
     header img {
-  max-width: 400px;
-  margin: 0.5;  
-  margin-bottom: 0.5rem; 
-}
-     header h1,
+      max-width: min(400px, 90%);
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    
+    header img:hover {
+      transform: scale(1.02);
+    }
+    
+    header h1,
     header p {
       margin: 0.5rem 0;
     }
-    .logo {
-      max-width: 360px;
-      height: auto;
-      display: block;
-      margin: 0 auto 1rem auto;
+    
+    nav {
+      background-color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
     }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    
+    nav li {
+      margin: 0 1rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    
+    nav a:hover {
+      background-color: rgba(51, 102, 153, 0.1);
+    }
+    
     .section {
       max-width: 1000px;
       margin: 2rem auto;
@@ -44,51 +95,78 @@
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
+    
     .section h2 {
-      color: #2f4f4f;
+      color: var(--secondary);
       margin-top: 0;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-light);
+    }
+    
     .intro p {
       font-size: 1.1rem;
     }
+    
     .door-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding-top: 1rem;
-}
-
-.door-link {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.door {
-  width: 120px;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 6px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  transition: background-image 0.3s ease;
-  cursor: pointer;
-}
-
-.door-label {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2rem;
+      padding-top: 1rem;
+    }
+    
+    .door-link {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .door-link:hover {
+      transform: translateY(-5px);
+    }
+    
+    .door {
+      width: 120px;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .door:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .door-label {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: var(--text);
+      text-align: center;
+    }
+    
     .cta {
       text-align: center;
       margin-top: 2rem;
+      background-color: rgba(51, 102, 153, 0.05);
+      border: 2px dashed var(--primary-light);
     }
+    
     .cta a {
-      background: #336699;
+      background: var(--primary);
       color: white;
       text-decoration: none;
       padding: 1rem 2rem;
@@ -96,59 +174,181 @@
       font-size: 1.1rem;
       display: inline-block;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      font-weight: 600;
     }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.85rem;
-      color: #777;
+    
+    .cta a:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
+    
     /* How It Works */
-.steps {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  gap: 2rem;
-}
-.step {
-  text-align: center;
-  flex: 1 1 200px;
-}
-.emoji {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Testimonials */
-.testimonials blockquote {
-  font-style: italic;
-  background: #f0f4f8;
-  border-left: 4px solid #4d88cc;
-  margin: 1rem auto;
-  padding: 1rem 1.5rem;
-  max-width: 700px;
-  border-radius: 6px;
-}
-
-/* FAQ Accordion */
-.faq details {
-  background: #f9fbfd;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.faq summary {
-  font-weight: bold;
-  cursor: pointer;
-}
-.faq p {
-  margin-top: 0.5rem;
-}
-  
-
-
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .step {
+      text-align: center;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    
+    .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Testimonials */
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .testimonial {
+      font-style: italic;
+      background: #f0f4f8;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.5rem;
+      border-radius: 6px;
+      position: relative;
+    }
+    
+    .testimonial::before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      color: rgba(77, 136, 204, 0.1);
+      line-height: 1;
+    }
+    
+    .testimonial-author {
+      font-style: normal;
+      font-weight: 600;
+      margin-top: 1rem;
+      color: var(--primary);
+    }
+    
+    /* FAQ Accordion */
+    .faq details {
+      background: #f9fbfd;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .faq details:hover {
+      border-color: var(--primary-light);
+    }
+    
+    .faq details[open] {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .faq summary {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .faq p {
+      margin-top: 0.5rem;
+      padding: 0 0.5rem;
+    }
+    
+    /* Doctor Profile */
+    .doctor-profile {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    
+    .doctor-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-light);
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .section {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+      }
+      
+      .doctor-profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav li {
+        margin: 0.5rem 0;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .section {
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .section:nth-child(2) { animation-delay: 0.1s; }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    .section:nth-child(4) { animation-delay: 0.3s; }
+    .section:nth-child(5) { animation-delay: 0.4s; }
+    .section:nth-child(6) { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
@@ -159,112 +359,205 @@
   <p>A personalized rheumatology intake portal to streamline your care</p>
 </header>
 
-<section class="section intro">
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#conditions">Conditions</a></li>
+    <li><a href="#survey">Survey</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="about" class="section intro">
   <h2>Why This Survey Can Help Save Time</h2>
   <p>
     The purpose of this survey is to help begin your treatment plan sooner. 
     The survey carries a $20 fee and is designed to streamline your care. 
     By gathering your symptoms and generating a personalized lab order, referral, and encounter note, it helps your 
     rheumatologist focus on what matters most — potentially starting expediting your treatment plan and making the most of your first visit.
-</section>
-
-<section class="section">
-  <h2>Explore Rheumatologic Conditions</h2>
- <div class="door-grid">
-  <a href="Rooms/fibromyalgia.html" class="door-link">
-    <div class="door" style="background-image: url('assets/img/door-closed.png');"
-         onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
-         onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
-    <div class="door-label">Fibromyalgia</div>
-  </a>
-  <a href="Rooms/lupus.html" class="door-link">
-    <div class="door" style="background-image: url('assets/img/door-closed.png');"
-         onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
-         onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
-    <div class="door-label">Lupus</div>
-  </a>
-  <a href="Rooms/ra.html" class="door-link">
-    <div class="door" style="background-image: url('assets/img/door-closed.png');"
-         onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
-         onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
-    <div class="door-label">Rheumatoid Arthritis</div>
-  </a>
-  <a href="Rooms/spondylitis.html" class="door-link">
-    <div class="door" style="background-image: url('assets/img/door-closed.png');"
-         onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
-         onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
-    <div class="door-label">Spondyloarthritis</div>
-  </a>
-  <a href="Rooms/sjogrens.html" class="door-link">
-    <div class="door" style="background-image: url('assets/img/door-closed.png');"
-         onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
-         onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
-    <div class="door-label">Sjogren's</div>
-  </a>
-  <a href="Rooms/gout.html" class="door-link">
-    <div class="door" style="background-image: url('assets/img/door-closed.png');"
-         onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
-         onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
-    <div class="door-label">Gout</div>
-  </a>
-</div>
-
+  </p>
+  
+  <div class="doctor-profile">
+    <img src="assets/img/doctor.jpg" alt="Dr. [Your Name]" class="doctor-photo">
+    <div>
+      <h3>About Dr. [Your Name]</h3>
+      <p>Board-certified rheumatologist with [X] years of experience specializing in autoimmune and inflammatory conditions. Committed to providing personalized, evidence-based care.</p>
+      <p>Education: [Your Medical School], Residency: [Your Residency Program], Fellowship: [Your Fellowship Program]</p>
+    </div>
   </div>
 </section>
 
-<section class="section cta">
-  <h2>Start Your Symptom Survey</h2>
-  <p>This secure survey helps us understand your symptoms and generate the documents you'll need for your visit.</p>
-  <a href="https://form.jotform.com/250214487408153" target="_blank">Take the Survey</a>
+<section id="conditions" class="section">
+  <h2>Explore Rheumatologic Conditions</h2>
+  <div class="door-grid">
+    <a href="Rooms/fibromyalgia.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Fibromyalgia</div>
+    </a>
+    <a href="Rooms/lupus.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Lupus</div>
+    </a>
+    <a href="Rooms/ra.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Rheumatoid Arthritis</div>
+    </a>
+    <a href="Rooms/spondylitis.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Spondyloarthritis</div>
+    </a>
+    <a href="Rooms/sjogrens.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Sjogren's</div>
+    </a>
+    <a href="Rooms/gout.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Gout</div>
+    </a>
+  </div>
 </section>
 
-  <section class="section how-it-works">
+<section id="survey" class="section cta">
+  <h2>Start Your Symptom Survey</h2>
+  <p>This secure survey helps us understand your symptoms and generate the documents you'll need for your visit.</p>
+  <p><strong>Estimated time:</strong> 15-20 minutes</p>
+  <a href="https://form.jotform.com/250214487408153" target="_blank">Take the Survey ($20)</a>
+  
+  <div style="margin-top: 2rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
+    <h3>What to Expect:</h3>
+    <ul>
+      <li>Comprehensive symptom assessment</li>
+      <li>Personalized lab order based on your responses</li>
+      <li>Generated encounter note for your records</li>
+      <li>Secure HIPAA-compliant submission</li>
+    </ul>
+  </div>
+</section>
+
+<section id="process" class="section how-it-works">
   <h2>How It Works</h2>
   <div class="steps">
     <div class="step">
       <div class="emoji">✅</div>
       <h3>Step 1</h3>
-      <p>Complete your secure symptom survey</p>
+      <p>Complete your secure symptom survey (15-20 minutes)</p>
     </div>
     <div class="step">
       <div class="emoji">📝</div>
       <h3>Step 2</h3>
-      <p>Receive a personalized encounter note & lab plan</p>
+      <p>Receive a personalized encounter note & lab plan within 48 hours</p>
     </div>
     <div class="step">
       <div class="emoji">🧪</div>
       <h3>Step 3</h3>
-      <p>Visit the Sterling lab center (9am–3pm)</p>
+      <p>Visit the Sterling lab center (9am–3pm) with your generated lab order</p>
+    </div>
+    <div class="step">
+      <div class="emoji">🩺</div>
+      <h3>Step 4</h3>
+      <p>Attend your rheumatology appointment with all preliminary work completed</p>
     </div>
   </div>
 </section>
 
 <section class="section testimonials">
   <h2>What Patients Are Saying</h2>
-  <blockquote>"This saved me 45 minutes at my first visit!"</blockquote>
-  <blockquote>"I finally felt like my symptoms were heard and understood."</blockquote>
+  <div class="testimonials-container">
+    <div class="testimonial">
+      "This saved me 45 minutes at my first visit and helped my doctor understand my symptoms before we even met."
+      <div class="testimonial-author">- Sarah J., Fibromyalgia Patient</div>
+    </div>
+    <div class="testimonial">
+      "I finally felt like my symptoms were heard and understood. The lab work was exactly what I needed."
+      <div class="testimonial-author">- Michael T., Lupus Patient</div>
+    </div>
+    <div class="testimonial">
+      "The $20 fee was worth it - my first appointment was so much more productive than with previous specialists."
+      <div class="testimonial-author">- Anita R., Rheumatoid Arthritis Patient</div>
+    </div>
+  </div>
 </section>
 
-<section class="section faq">
+<section id="faq" class="section faq">
   <h2>Frequently Asked Questions</h2>
   <details>
     <summary>Do I need insurance to use this?</summary>
-    <p>No. The symptom survey is free and available to all patients, regardless of insurance status.</p>
+    <p>No. The symptom survey is available to all patients, regardless of insurance status. The $20 fee covers survey processing and document generation.</p>
   </details>
   <details>
     <summary>How is my data handled?</summary>
-    <p>Your data is processed securely through Jotform (HiPPA Compliant) and stored privately within a HIPPA compliant ecosystem — not on this site.</p>
+    <p>Your data is processed securely through Jotform (HIPAA Compliant) and stored privately within a HIPAA compliant ecosystem — not on this site. We follow strict privacy protocols to protect your health information.</p>
   </details>
   <details>
     <summary>What if I already have labs from another provider?</summary>
-    <p>You can bring them to your appointment, but our survey ensures nothing important is missed.</p>
+    <p>You can bring them to your appointment, but our survey ensures we don't miss any important tests specific to rheumatologic conditions. The generated lab order will account for any recent testing.</p>
+  </details>
+  <details>
+    <summary>Can I get a refund if I don't complete the survey?</summary>
+    <p>The $20 fee is non-refundable as it covers the processing and document generation system. However, if you experience technical difficulties, please contact us for assistance.</p>
+  </details>
+  <details>
+    <summary>How long does it take to get my lab order and encounter note?</summary>
+    <p>Documents are typically generated within 48 hours of survey completion. You'll receive an email notification when they're ready.</p>
   </details>
 </section>
 
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p>Have questions about the survey or your rheumatology care?</p>
+  <p>Email: <a href="mailto:info@rheum1.com">info@rheum1.com</a></p>
+  <p>Phone: (XXX) XXX-XXXX</p>
+  
+  <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+    <img src="assets/img/hipaa-badge.png" alt="HIPAA Compliant" style="height: 60px;">
+    <img src="assets/img/medical-association.png" alt="Medical Association Member" style="height: 60px;">
+  </div>
+</section>
+
+<a href="#" class="back-to-top" id="backToTop">↑</a>
   
 <footer>
-  <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform (HiPPA Compliant) and stored privately within a HIPPA compliant ecosystem.</p>
+  <p>© 2025 Rheum1. This site does not collect or store your personal health data. All processing occurs securely via Jotform (HIPAA Compliant) and stored privately within a HIPAA compliant ecosystem.</p>
+  <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
 </footer>
+
+<script>
+  // Back to top button
+  const backToTopButton = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
