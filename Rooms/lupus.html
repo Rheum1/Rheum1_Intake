@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lupus Resources | Rheum1</title>
+  <title>Gout Resources | Rheum1</title>
   <link rel="stylesheet" href="../css/styles.css">
   <style>
     .room-header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/lupus-bg.jpg');
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/gout-bg.jpg');
       background-size: cover;
       background-position: center;
       color: white;
@@ -15,20 +15,80 @@
       text-align: center;
       margin-bottom: 2rem;
     }
-    /* Shared styles same as fibromyalgia.html */
+    .room-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .room-subtitle { font-size: 1.2rem; opacity: 0.9; }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .resource-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .resource-card:hover { transform: translateY(-5px); }
+    .resource-card h3 { color: var(--primary); margin-top: 0; }
+    .download-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--primary-light);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    .back-button:hover { background: var(--primary-light); }
   </style>
 </head>
 <body>
-<!-- Header/Nav same as fibromyalgia.html -->
+
+<nav>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#conditions">All Conditions</a></li>
+    <li><a href="../index.html#survey">Survey</a></li>
+  </ul>
+</nav>
 
 <div class="room-header">
-  <h1 class="room-title">Lupus Resource Room</h1>
-  <p class="room-subtitle">Understanding and managing systemic lupus erythematosus</p>
+  <h1 class="room-title">Gout Resource Room</h1>
+  <p class="room-subtitle">Managing acute and chronic crystal arthritis</p>
 </div>
 
 <div class="section">
-  <h2>Understanding Lupus</h2>
-  <p>Lupus is an autoimmune disease where the body's immune system attacks its own tissues, causing inflammation and tissue damage in multiple organ systems.</p>
+  <h2>Understanding Gout</h2>
+  <p>Gout is a form of inflammatory arthritis caused by urate crystal deposition in joints, leading to sudden, severe pain attacks.</p>
   
   <div class="video-container">
     <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
@@ -36,46 +96,47 @@
   
   <h3>Key Features:</h3>
   <ul>
-    <li>Butterfly-shaped facial rash</li>
-    <li>Joint pain and swelling</li>
-    <li>Photosensitivity</li>
-    <li>Kidney, heart, or lung involvement</li>
+    <li>Sudden, severe joint pain (often 1st MTP)</li>
+    <li>Redness, swelling, and warmth</li>
+    <li>Recurrent attacks if untreated</li>
+    <li>Tophi formation in chronic cases</li>
   </ul>
 
   <h2>Educational Resources</h2>
   <div class="resources-grid">
     <div class="resource-card">
-      <h3>Diagnosis Process</h3>
-      <p>Understanding the diagnostic criteria and tests for lupus.</p>
+      <h3>Acute Management</h3>
+      <p>How to treat gout flares effectively.</p>
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
       </div>
+    </div>
+    
+    <div class="resource-card">
+      <h3>Urate-Lowering Therapy</h3>
+      <p>Preventing future attacks with medications.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <h3>Diet Guide</h3>
+      <p>Foods to emphasize and avoid with gout.</p>
+      <a href="../downloads/gout-diet.pdf" class="download-link">Download PDF</a>
     </div>
     
     <div class="resource-card">
       <h3>Medication Guide</h3>
-      <p>Overview of lupus treatments including immunosuppressants.</p>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Sun Protection</h3>
-      <p>Download our guide to managing photosensitivity.</p>
-      <a href="../downloads/lupus-sun-protection.pdf" class="download-link">Download PDF</a>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Lab Monitoring</h3>
-      <p>Understanding your regular blood tests for lupus.</p>
-      <a href="../downloads/lupus-lab-guide.pdf" class="download-link">Download PDF</a>
+      <p>Understanding allopurinol, febuxostat, and colchicine.</p>
+      <a href="../downloads/gout-meds.pdf" class="download-link">Download PDF</a>
     </div>
   </div>
   
   <a href="../index.html#conditions" class="back-button">← Back to All Conditions</a>
 </div>
-
-<!-- Footer same as fibromyalgia.html -->
+<footer>
+  <p>© 2025 Rheum One. Educational use only.</p>
+</footer>
 </body>
 </html>
