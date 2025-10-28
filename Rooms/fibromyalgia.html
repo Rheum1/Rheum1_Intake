@@ -6,6 +6,12 @@
   <title>Fibromyalgia Resources | Rheum1</title>
   <link rel="stylesheet" href="../css/styles.css">
   <style>
+    :root {
+      --primary: #2c7873;
+      --primary-light: #3a9a94;
+      --dark-link: #1a535c;
+    }
+    
     .room-header {
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/fibromyalgia-bg.jpg');
       background-size: cover;
@@ -18,52 +24,16 @@
     .room-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
     .room-subtitle { font-size: 1.2rem; opacity: 0.9; }
     
-    /* Coming Soon Section */
-    .coming-soon {
-      text-align: center;
-      margin: 3rem 0;
-      padding: 2rem;
-      background-color: #f8f9fa;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .coming-soon h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .video-placeholder {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin: 2rem auto;
-      max-width: 800px;
-      border-radius: 8px;
-      background: #e9ecef;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .video-placeholder::before {
-      content: "▶";
-      font-size: 4rem;
-      color: var(--primary);
-      opacity: 0.7;
-    }
-    
-    /* Disease Information Section */
-    .disease-info {
+    /* Reputable Resources Section */
+    .resources-section {
       margin: 3rem 0;
     }
-    .disease-info h2 {
+    .resources-section h2 {
       color: var(--primary);
       border-bottom: 2px solid var(--primary-light);
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
     }
-    
-    /* Resources Section */
     .resources-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -94,7 +64,7 @@
     .resource-link {
       display: inline-block;
       padding: 0.5rem 1rem;
-      background: var(--primary-light);
+      background: var(--dark-link);
       color: white;
       text-decoration: none;
       border-radius: 4px;
@@ -103,6 +73,54 @@
     }
     .resource-link:hover { 
       background: var(--primary); 
+    }
+    
+    /* Disease Information Section */
+    .disease-info {
+      margin: 3rem 0;
+      background-color: #f8f9fa;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .disease-info h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Coming Soon Section */
+    .coming-soon {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2rem;
+      background-color: #e9f5f4;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .coming-soon h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .video-placeholder {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem auto;
+      max-width: 800px;
+      border-radius: 8px;
+      background: #d1e7e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .video-placeholder::before {
+      content: "▶";
+      font-size: 4rem;
+      color: var(--primary);
+      opacity: 0.7;
     }
     
     /* Back Button */
@@ -146,11 +164,46 @@
 </div>
 
 <div class="section">
-  <!-- Coming Soon Section -->
-  <div class="coming-soon">
-    <h2>Coming Soon: RheumAir Talks with Doc Hunt</h2>
-    <p>Stay tuned for our upcoming video series featuring expert discussions on fibromyalgia management and treatment.</p>
-    <div class="video-placeholder"></div>
+  <!-- Reputable Resources Section -->
+  <div class="resources-section">
+    <h2>Reputable Medical Resources</h2>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <h3>Mayo Clinic</h3>
+        <p>Comprehensive overview of fibromyalgia symptoms, causes, diagnosis, and treatment from one of the world's leading medical institutions.</p>
+        <a href="https://www.mayoclinic.org/diseases-conditions/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
+      </div>
+      
+      <div class="resource-card">
+        <h3>National Institute of Arthritis and Musculoskeletal and Skin Diseases</h3>
+        <p>In-depth information on fibromyalgia research, diagnosis, and management from the NIH.</p>
+        <a href="https://www.niams.nih.gov/health-topics/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
+      </div>
+      
+      <div class="resource-card">
+        <h3>American College of Rheumatology</h3>
+        <p>Professional guidelines and patient resources for fibromyalgia diagnosis and treatment.</p>
+        <a href="https://www.rheumatology.org/I-Am-A/Patient-Caregiver/Diseases-Conditions/Fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
+      </div>
+      
+      <div class="resource-card">
+        <h3>Arthritis Foundation</h3>
+        <p>Practical information on living with fibromyalgia, including pain management strategies and support resources.</p>
+        <a href="https://www.arthritis.org/diseases/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
+      </div>
+      
+      <div class="resource-card">
+        <h3>Cleveland Clinic</h3>
+        <p>Detailed medical information about fibromyalgia symptoms, diagnosis, and treatment options.</p>
+        <a href="https://my.clevelandclinic.org/health/diseases/4832-fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
+      </div>
+      
+      <div class="resource-card">
+        <h3>Johns Hopkins Medicine</h3>
+        <p>Expert insights on fibromyalgia from one of the world's leading medical centers.</p>
+        <a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
+      </div>
+    </div>
   </div>
   
   <!-- Disease Information Section -->
@@ -177,44 +230,11 @@
     </ul>
   </div>
   
-  <!-- Reputable Resources Section -->
-  <h2>Reputable Medical Resources</h2>
-  <div class="resources-grid">
-    <div class="resource-card">
-      <h3>Mayo Clinic</h3>
-      <p>Comprehensive overview of fibromyalgia symptoms, causes, diagnosis, and treatment from one of the world's leading medical institutions.</p>
-      <a href="https://www.mayoclinic.org/diseases-conditions/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-    </div>
-    
-    <div class="resource-card">
-      <h3>National Institute of Arthritis and Musculoskeletal and Skin Diseases</h3>
-      <p>In-depth information on fibromyalgia research, diagnosis, and management from the NIH.</p>
-      <a href="https://www.niams.nih.gov/health-topics/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-    </div>
-    
-    <div class="resource-card">
-      <h3>American College of Rheumatology</h3>
-      <p>Professional guidelines and patient resources for fibromyalgia diagnosis and treatment.</p>
-      <a href="https://www.rheumatology.org/I-Am-A/Patient-Caregiver/Diseases-Conditions/Fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Arthritis Foundation</h3>
-      <p>Practical information on living with fibromyalgia, including pain management strategies and support resources.</p>
-      <a href="https://www.arthritis.org/diseases/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Cleveland Clinic</h3>
-      <p>Detailed medical information about fibromyalgia symptoms, diagnosis, and treatment options.</p>
-      <a href="https://my.clevelandclinic.org/health/diseases/4832-fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Johns Hopkins Medicine</h3>
-      <p>Expert insights on fibromyalgia from one of the world's leading medical centers.</p>
-      <a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-    </div>
+  <!-- Coming Soon Section -->
+  <div class="coming-soon">
+    <h2>Coming Soon: RheumAir Talks with Doc Hunt</h2>
+    <p>Stay tuned for our upcoming video series featuring expert discussions on fibromyalgia management and treatment.</p>
+    <div class="video-placeholder"></div>
   </div>
   
   <a href="../index.html#conditions" class="back-button">← Back to All Conditions</a>
