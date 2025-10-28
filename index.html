@@ -1,247 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fibromyalgia Resources | Rheum1</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Streamline your rheumatology care with our personalized intake survey and symptom assessment">
+  <title>Rheum1 | Rheumatology Intake Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #2c7873;
-      --primary-light: #3a9a94;
-      --dark-link: #1a535c;
+      --primary: #4c759e;
+      --primary-light: #4d88cc;
+      --secondary: #2f4f4f;
+      --accent: #e74c3c;
+      --light-bg: #f9fbfd;
+      --text: #333;
+      --text-light: #777;
     }
     
-    .room-header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/fibromyalgia-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 4rem 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .room-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .room-subtitle { font-size: 1.2rem; opacity: 0.9; }
-    
-    /* Reputable Resources Section */
-    .resources-section {
-      margin: 3rem 0;
-    }
-    .resources-section h2 {
-      color: var(--primary);
-      border-bottom: 2px solid var(--primary-light);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    .resource-card {
-      background: white;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      border-left: 4px solid var(--primary);
-    }
-    .resource-card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .resource-card h3 { 
-      color: var(--primary); 
-      margin-top: 0; 
-      margin-bottom: 1rem;
-    }
-    .resource-card p {
-      margin-bottom: 1.5rem;
+    body {
+      margin: 0;
+      font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-bg) url('https://www.transparenttextures.com/patterns/purty-wood.png');
+      color: var(--text);
       line-height: 1.6;
     }
-    .resource-link {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: var(--dark-link);
+    
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
       color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      transition: background 0.3s ease;
-    }
-    .resource-link:hover { 
-      background: var(--primary); 
-    }
-    
-    /* Disease Information Section */
-    .disease-info {
-      margin: 3rem 0;
-      background-color: #f8f9fa;
-      padding: 2rem;
-      border-radius: 8px;
-    }
-    .disease-info h2 {
-      color: var(--primary);
-      border-bottom: 2px solid var(--primary-light);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    /* Coming Soon Section */
-    .coming-soon {
+      padding: 1.5rem 1rem;
       text-align: center;
-      margin: 3rem 0;
-      padding: 2rem;
-      background-color: #e9f5f4;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    .coming-soon h2 {
-      color: var(--primary);
+    
+    header img {
+      max-width: min(400px, 90%);
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    
+    header img:hover {
+      transform: scale(1.02);
+    }
+    
+    header h1,
+    header p {
+      margin: 0.5rem 0;
+    }
+    
+    nav {
+      background-color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       margin-bottom: 1rem;
     }
-    .video-placeholder {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin: 2rem auto;
-      max-width: 800px;
-      border-radius: 8px;
-      background: #d1e7e5;
+    
+    nav ul {
       display: flex;
-      align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .video-placeholder::before {
-      content: "▶";
-      font-size: 4rem;
-      color: var(--primary);
-      opacity: 0.7;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
     }
     
-    /* Back Button */
-    .back-button {
-      display: inline-block;
+    nav li {
+      margin: 0 1rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    
+    nav a:hover {
+      background-color: rgba(51, 102, 153, 0.1);
+    }
+    
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    
+    .section h2 {
+      color: var(--secondary);
+      margin-top: 0;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-light);
+    }
+    
+    .intro p {
+      font-size: 1.1rem;
+    }
+    
+    .door-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2rem;
+      padding-top: 1rem;
+    }
+    
+    .door-link {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .door-link:hover {
+      transform: translateY(-5px);
+    }
+    
+    .door {
+      width: 120px;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .door:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .door-label {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: var(--text);
+      text-align: center;
+    }
+    
+    .cta {
+      text-align: center;
       margin-top: 2rem;
-      padding: 0.8rem 1.5rem;
+      background-color: rgba(51, 102, 153, 0.05);
+      border: 2px dashed var(--primary-light);
+    }
+    
+    .cta a {
       background: var(--primary);
       color: white;
       text-decoration: none;
+      padding: 1rem 2rem;
       border-radius: 6px;
+      font-size: 1.1rem;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
-    }
-    .back-button:hover { 
-      background: var(--primary-light); 
-      transform: translateY(-2px);
+      font-weight: 600;
     }
     
-    /* Responsive Adjustments */
+    .cta a:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    /* How It Works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .step {
+      text-align: center;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    
+    .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Testimonials */
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .testimonial {
+      font-style: italic;
+      background: #f0f4f8;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.5rem;
+      border-radius: 6px;
+      position: relative;
+    }
+    
+    .testimonial::before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      top: 0;
+      left: 10px;
+      color: rgba(77, 136, 204, 0.1);
+      line-height: 1;
+    }
+    
+    .testimonial-author {
+      font-style: normal;
+      font-weight: 600;
+      margin-top: 1rem;
+      color: var(--primary);
+    }
+    
+    /* FAQ Accordion */
+    .faq details {
+      background: #f9fbfd;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .faq details:hover {
+      border-color: var(--primary-light);
+    }
+    
+    .faq details[open] {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .faq summary {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .faq p {
+      margin-top: 0.5rem;
+      padding: 0 0.5rem;
+    }
+    
+    /* Doctor Profile */
+    .doctor-profile {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    
+    .doctor-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-light);
+    }
+    
+    /* Resources Preview */
+    .resources-preview {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    
+    .resource-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    .feature {
+      flex: 1 1 200px;
+      max-width: 200px;
+    }
+    
+    .feature img {
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+    
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .room-title { font-size: 2rem; }
-      .resources-grid {
-        grid-template-columns: 1fr;
+      .section {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+      }
+      
+      .doctor-profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav li {
+        margin: 0.5rem 0;
+      }
+      
+      .door-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .section {
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .section:nth-child(2) { animation-delay: 0.1s; }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    .section:nth-child(4) { animation-delay: 0.3s; }
+    .section:nth-child(5) { animation-delay: 0.4s; }
+    .section:nth-child(6) { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
+ 
+<header>
+  <img src="assets/img/rheumlogo.png" alt="Rheum1 Logo" />
+  <h1>Welcome to the Rheum One™ information website</h1>
+  <p>A personalized rheumatology intake portal to streamline your care</p>
+</header>
 
 <nav>
   <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../index.html#conditions">All Conditions</a></li>
-    <li><a href="../index.html#survey">Survey</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#conditions">Conditions</a></li>
+    <li><a href="#survey">Survey</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<div class="room-header">
-  <h1 class="room-title">Fibromyalgia Resource Room</h1>
-  <p class="room-subtitle">Education and management strategies for fibromyalgia</p>
-</div>
-
-<div class="section">
-  <!-- Reputable Resources Section -->
-  <div class="resources-section">
-    <h2>Reputable Medical Resources</h2>
-    <div class="resources-grid">
-      <div class="resource-card">
-        <h3>Mayo Clinic</h3>
-        <p>Comprehensive overview of fibromyalgia symptoms, causes, diagnosis, and treatment from one of the world's leading medical institutions.</p>
-        <a href="https://www.mayoclinic.org/diseases-conditions/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-      </div>
-      
-      <div class="resource-card">
-        <h3>National Institute of Arthritis and Musculoskeletal and Skin Diseases</h3>
-        <p>In-depth information on fibromyalgia research, diagnosis, and management from the NIH.</p>
-        <a href="https://www.niams.nih.gov/health-topics/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-      </div>
-      
-      <div class="resource-card">
-        <h3>American College of Rheumatology</h3>
-        <p>Professional guidelines and patient resources for fibromyalgia diagnosis and treatment.</p>
-        <a href="https://www.rheumatology.org/I-Am-A/Patient-Caregiver/Diseases-Conditions/Fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-      </div>
-      
-      <div class="resource-card">
-        <h3>Arthritis Foundation</h3>
-        <p>Practical information on living with fibromyalgia, including pain management strategies and support resources.</p>
-        <a href="https://www.arthritis.org/diseases/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-      </div>
-      
-      <div class="resource-card">
-        <h3>Cleveland Clinic</h3>
-        <p>Detailed medical information about fibromyalgia symptoms, diagnosis, and treatment options.</p>
-        <a href="https://my.clevelandclinic.org/health/diseases/4832-fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-      </div>
-      
-      <div class="resource-card">
-        <h3>Johns Hopkins Medicine</h3>
-        <p>Expert insights on fibromyalgia from one of the world's leading medical centers.</p>
-        <a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/fibromyalgia" target="_blank" class="resource-link">Visit Resource</a>
-      </div>
+<section id="about" class="section intro">
+  <h2>Why This Survey Can Help Save Time</h2>
+  <p>
+    The purpose of this survey is to help begin your treatment plan sooner. 
+    The survey carries a $20 fee and is designed to streamline your care. 
+    By gathering your symptoms and generating a personalized lab order, referral, and encounter note, it helps your 
+    rheumatologist focus on what matters most — expediting your treatment plan and making the most of your first visit.
+  </p>
+  
+  <div class="doctor-profile">
+    <img src="assets/img/doctor.jpg" alt="James M. Hunt, DO" class="doctor-photo">
+    <div>
+      <h3>About James M. Hunt, DO</h3>
+      <p>Board-certified rheumatologist with 19 years of experience specializing in autoimmune and inflammatory conditions. Committed to providing personalized, evidence-based care.</p>
+      <p><b>College:</b> Florida State University <b>Medical School:</b> Nova Southeastern University College of Medicine <b>Residency:</b> University of South Florida <b>Fellowship:</b> Rheumatology University of Florida</p>
     </div>
   </div>
-  
-  <!-- Disease Information Section -->
-  <div class="disease-info">
-    <h2>Understanding Fibromyalgia</h2>
-    <p>Fibromyalgia is a chronic condition characterized by widespread pain, fatigue, sleep disturbances, and cognitive difficulties often referred to as "fibro fog." It affects how your brain processes pain signals, amplifying painful sensations.</p>
-    
-    <h3>Key Features:</h3>
-    <ul>
-      <li>Widespread musculoskeletal pain</li>
-      <li>Fatigue and sleep disturbances</li>
-      <li>Cognitive difficulties ("fibro fog")</li>
-      <li>Often co-occurs with tension headaches, irritable bowel syndrome (IBS), anxiety, and depression</li>
-      <li>Tender points throughout the body</li>
-    </ul>
-    
-    <h3>Common Treatment Approaches:</h3>
-    <ul>
-      <li>Medications (pain relievers, antidepressants, anti-seizure drugs)</li>
-      <li>Physical therapy and gentle exercise</li>
-      <li>Cognitive behavioral therapy (CBT)</li>
-      <li>Stress reduction techniques</li>
-      <li>Sleep hygiene practices</li>
-    </ul>
-  </div>
-  
-  <!-- Coming Soon Section -->
-  <div class="coming-soon">
-    <h2>Coming Soon: RheumAir Talks with Doc Hunt</h2>
-    <p>Stay tuned for our upcoming video series featuring expert discussions on fibromyalgia management and treatment.</p>
-    <div class="video-placeholder"></div>
-  </div>
-  
-  <a href="../index.html#conditions" class="back-button">← Back to All Conditions</a>
-</div>
+</section>
 
+<section id="conditions" class="section">
+  <h2>Explore Rheumatologic Conditions</h2>
+  <p>Click on any door below to enter our educational resource room for that condition:</p>
+  
+  <div class="door-grid">
+    <a href="Rooms/fibromyalgia.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Fibromyalgia</div>
+    </a>
+    <a href="Rooms/lupus.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Lupus</div>
+    </a>
+    <a href="Rooms/rheumatoid_arthritis.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Rheumatoid Arthritis</div>
+    </a>
+    <a href="Rooms/spondyloarthritis.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Spondyloarthritis</div>
+    </a>
+    <a href="Rooms/sjogrens.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Sjogren's</div>
+    </a>
+    <a href="Rooms/gout.html" class="door-link">
+      <div class="door" style="background-image: url('assets/img/door-closed.png');"
+           onmouseover="this.style.backgroundImage='url(\'assets/img/door-open.png\')'"
+           onmouseout="this.style.backgroundImage='url(\'assets/img/door-closed.png\')'"></div>
+      <div class="door-label">Gout</div>
+    </a>
+  </div>
+
+<section id="survey" class="section cta">
+  <h2>Start Your Symptom Survey</h2>
+  <p>This secure survey helps us understand your symptoms and generate the documents you'll need for your visit.
+      Evaluations Include: Lupus, Rheumatoid Arthritis, Mixed Connective Tissue Disease, Scleroderma, Sjogren’s.</p>
+  <p><strong>Estimated time:</strong> 15-20 minutes</p>
+  <a href="https://form.jotform.com/250214487408153" target="_blank">Take the Survey ($20)</a>
+  
+  <div style="margin-top: 2rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
+    <h3>What to Expect:</h3>
+    <ul>
+      <li>Comprehensive symptom assessment</li>
+      <li>Personalized lab order based on your responses</li>
+      <li>Generated encounter note for your records</li>
+      <li>Secure HIPAA-compliant submission</li>
+    </ul>
+  </div>
+</section>
+
+<section id="process" class="section how-it-works">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="emoji">✅</div>
+      <h3>Step 1</h3>
+      <p>Complete your secure symptom survey (15-20 minutes)</p>
+    </div>
+    <div class="step">
+      <div class="emoji">📝</div>
+      <h3>Step 2</h3>
+      <p>Receive a personalized encounter note & lab plan within 48 hours</p>
+    </div>
+    <div class="step">
+      <div class="emoji">🧪</div>
+      <h3>Step 3</h3>
+      <p>Follow the instructions in your personalized email</p>
+    </div>
+    <div class="step">
+      <div class="emoji">🩺</div>
+      <h3>Step 4</h3>
+      <p>Attend your rheumatology appointment with all preliminary work completed</p>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <h2>What Patients Are Saying</h2>
+  <div class="testimonials-container">
+    <div class="testimonial">
+      "This saved me 45 minutes at my first visit and helped my doctor understand my symptoms before we even met."
+      <div class="testimonial-author">- Sarah J., Fibromyalgia Patient</div>
+    </div>
+    <div class="testimonial">
+      "I finally felt like my symptoms were heard and understood. The lab work was exactly what I needed."
+      <div class="testimonial-author">- Michael T., Lupus Patient</div>
+    </div>
+    <div class="testimonial">
+      "The $20 fee was worth it - my first appointment was so much more productive than with previous specialists."
+      <div class="testimonial-author">- Anita R., Rheumatoid Arthritis Patient</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section faq">
+  <h2>Frequently Asked Questions</h2>
+  <details>
+    <summary>Do I need insurance to use this?</summary>
+    <p>No. The symptom survey is available to all patients, regardless of insurance status. The $20 fee covers survey processing and document generation.</p>
+  </details>
+  <details>
+    <summary>How is my data handled?</summary>
+    <p>Your data is processed securely through Jotform (HIPAA Compliant) and stored privately within a HIPAA compliant ecosystem — not on this site. We follow strict privacy protocols to protect your health information.</p>
+  </details>
+  <details>
+    <summary>What if I already have labs from another provider?</summary>
+    <p>You can bring them to your appointment, but our survey ensures we don't miss any important tests specific to rheumatologic conditions. The generated lab order will account for any recent testing.</p>
+  </details>
+  <details>
+    <summary>Can I get a refund if I don't complete the survey?</summary>
+    <p>The $20 fee is non-refundable as it covers the processing and document generation system. However, if you experience technical difficulties, please contact us for assistance.</p>
+  </details>
+  <details>
+    <summary>How long does it take to get my lab order and encounter note?</summary>
+    <p>Documents are typically generated within 48 hours of survey completion. You'll receive an email notification when they're ready.</p>
+  </details>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p>Have questions about the survey or your rheumatology care?</p>
+  <p>Email: <a href="mailto:info@rheum1.com">TheTeam@Rheum1.org</a></p>
+ 
+  
+  <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+    <img src="assets/img/hipaa-badge.png" alt="HIPAA Compliant" style="height: 60px;">
+    <img src="assets/img/medical-association.png" alt="Medical Association Member" style="height: 60px;">
+  </div>
+</section>
+
+<a href="#" class="back-to-top" id="backToTop">↑</a>
+  
 <footer>
-  <p>© 2025 Rheum One. Educational use only.</p>
+  <p>© 2025 Rheum One. This site does not collect or store your personal health data. All processing occurs securely via Jotform (HIPAA Compliant) and stored privately within a HIPAA compliant ecosystem.</p>
+  <p>
+    <a href="privacy.html">Privacy Policy</a> | 
+    <a href="terms.html">Terms of Service</a>
+  </p>
 </footer>
+
+<script>
+  // Back to top button
+  const backToTopButton = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
