@@ -5,59 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lupus Resources | Rheum1</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <style>
+  
+<style>
+    :root {
+      --primary: #4c759e;
+      --primary-light: #4d88cc;
+      --dark-link: #4c759e;
+        }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    nav {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      gap: 1rem;
+    }
+    
+    nav li {
+      margin: 0;
+    }
+    
+    .nav-button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .nav-button:hover { 
+      background: var(--primary-light); 
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
     .room-header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/img/lupus-bg.jpg');
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), #6a89cc;
       background-size: cover;
       background-position: center;
       color: white;
       padding: 4rem 1rem;
       text-align: center;
       margin-bottom: 2rem;
-    }
-    .room-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .room-subtitle { font-size: 1.2rem; opacity: 0.9; }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin: 2rem 0;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    
+    .room-title { 
+      font-size: 2.5rem; 
+      margin-bottom: 0.5rem; 
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
+    
+    .room-subtitle { 
+      font-size: 1.2rem; 
+      opacity: 0.9; 
+    }
+    
+    .resources-section {
+      margin: 3rem 0;
+    }
+    
+    .resources-section h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
     .resources-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin: 2rem 0;
     }
+    
     .resource-card {
       background: white;
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      border-left: 4px solid var(--primary);
     }
-    .resource-card:hover { transform: translateY(-5px); }
-    .resource-card h3 { color: var(--primary); margin-top: 0; }
-    .download-link {
+    
+    .resource-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .resource-card h3 { 
+      color: var(--primary); 
+      margin-top: 0; 
+      margin-bottom: 1rem;
+    }
+    
+    .resource-card p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .resource-link {
       display: inline-block;
-      margin-top: 1rem;
       padding: 0.5rem 1rem;
-      background: var(--primary-light);
+      background: var(--primary);
       color: white;
       text-decoration: none;
       border-radius: 4px;
       font-size: 0.9rem;
+      transition: background 0.3s ease;
     }
+    
+    .resource-link:hover { 
+      background: var(--dark-link); 
+    }
+    
+    .disease-info {
+      margin: 3rem 0;
+      background-color: #f8f9fa;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    
+    .disease-info h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .disease-info h3 {
+      color: var(--primary);
+      margin: 1.5rem 0 0.5rem;
+    }
+    
+    .disease-info ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .disease-info li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .coming-soon {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2rem;
+      background-color: ##d3d3d3;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .coming-soon h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .video-placeholder {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2rem auto;
+      max-width: 800px;
+      border-radius: 8px;
+      background: #d1e7e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .video-placeholder::before {
+      content: "▶";
+      font-size: 4rem;
+      color: var(--primary);
+      opacity: 0.7;
+    }
+    
     .back-button {
       display: inline-block;
       margin-top: 2rem;
@@ -68,79 +229,117 @@
       border-radius: 6px;
       transition: all 0.3s ease;
     }
-    .back-button:hover { background: var(--primary-light); }
+    
+    .back-button:hover { 
+      background: var(--primary-light); 
+      transform: translateY(-2px);
+    }
+    
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .room-title { font-size: 2rem; }
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
+
+
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="../index.html" class="nav-button">Home</a></li>
+      <li><a href="../index.html#conditions" class="nav-button">All Conditions</a></li>
+      <li><a href="../index.html#survey" class="nav-button">Survey</a></li>
+    </ul>
+  </nav>
 
-<nav>
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../index.html#conditions">All Conditions</a></li>
-    <li><a href="../index.html#survey">Survey</a></li>
-  </ul>
-</nav>
+  <div class="container">
+    <div class="room-header">
+      <h1 class="room-title">Lupus Resource Room</h1>
+      <p class="room-subtitle">Education and management strategies for systemic lupus erythematosus</p>
+    </div>
 
-<div class="room-header">
-  <h1 class="room-title">Lupus Resource Room</h1>
-  <p class="room-subtitle">Understanding and managing Systemic Lupus Erythematosus</p>
-</div>
-
-<div class="section">
-  <h2>Understanding Lupus</h2>
-  <p>Systemic Lupus Erythematosus (SLE) is a chronic autoimmune disease where the immune system attacks the body's own tissues, causing inflammation and damage to various organs.</p>
-  
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/YOUR_LUPUS_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    <!-- Reputable Resources Section -->
+    <div class="resources-section">
+      <h2>Reputable Medical Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <h3>Lupus Foundation of America</h3>
+          <p>Comprehensive resources for understanding lupus, treatment options, and living with the condition.</p>
+          <a href="https://www.lupus.org/" target="_blank" class="resource-link">Visit Resource</a>
+        </div>
+        
+        <div class="resource-card">
+          <h3>Mayo Clinic</h3>
+          <p>Detailed medical information about lupus symptoms, causes, diagnosis, and treatment.</p>
+          <a href="https://www.mayoclinic.org/diseases-conditions/lupus" target="_blank" class="resource-link">Visit Resource</a>
+        </div>
+        
+        <div class="resource-card">
+          <h3>American College of Rheumatology</h3>
+          <p>Professional guidelines and patient resources for lupus diagnosis and management.</p>
+          <a href="https://www.rheumatology.org/I-Am-A/Patient-Caregiver/Diseases-Conditions/Lupus" target="_blank" class="resource-link">Visit Resource</a>
+        </div>
+        
+        <div class="resource-card">
+          <h3>Johns Hopkins Medicine</h3>
+          <p>Expert insights on lupus from one of the world's leading medical centers.</p>
+          <a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/lupus" target="_blank" class="resource-link">Visit Resource</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Disease Information Section -->
+    <div class="disease-info">
+      <h2>Understanding Lupus</h2>
+      <p>Systemic lupus erythematosus (SLE) is a chronic autoimmune disease in which the immune system attacks its own tissues, causing widespread inflammation and tissue damage in affected organs.</p>
+      
+      <h3>Key Features:</h3>
+      <ul>
+        <li>Butterfly-shaped rash across the cheeks and nose</li>
+        <li>Joint pain, stiffness, and swelling</li>
+        <li>Fatigue and fever</li>
+        <li>Photosensitivity (sensitivity to sunlight)</li>
+        <li>Hair loss and mouth sores</li>
+        <li>Potential organ involvement (kidneys, heart, lungs)</li>
+      </ul>
+      
+      <h3>Common Treatment Approaches:</h3>
+      <ul>
+        <li>Nonsteroidal anti-inflammatory drugs (NSAIDs)</li>
+        <li>Antimalarial drugs (hydroxychloroquine)</li>
+        <li>Corticosteroids</li>
+        <li>Immunosuppressants</li>
+        <li>Biologics</li>
+        <li>Lifestyle modifications (sun protection, stress management)</li>
+      </ul>
+    </div>
+    
+    <!-- Coming Soon Section -->
+    <div class="coming-soon">
+      <h2>Coming Soon: RheumAir Talks with Doc Hunt</h2>
+      <p>Stay tuned for our upcoming video series featuring expert discussions on lupus management and treatment.</p>
+      <div class="video-placeholder"></div>
+    </div>
+    
+    <a href="../index.html#conditions" class="back-button">← Back to All Conditions</a>
   </div>
-  
-  <h3>Key Features:</h3>
-  <ul>
-    <li>Butterfly rash (malar rash)</li>
-    <li>Joint pain and swelling</li>
-    <li>Fatigue and fever</li>
-    <li>Kidney involvement (lupus nephritis)</li>
-    <li>Photosensitivity</li>
-    <li>Hair loss and oral ulcers</li>
-  </ul>
 
-  <h2>Educational Resources</h2>
-  <div class="resources-grid">
-    <div class="resource-card">
-      <h3>Disease Overview</h3>
-      <p>Understanding the basics of lupus and its manifestations.</p>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Medication Management</h3>
-      <p>Hydroxychloroquine, steroids, and immunosuppressants.</p>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Lifestyle & Self-Care</h3>
-      <p>Managing flares, sun protection, and daily living with lupus.</p>
-      <a href="../downloads/lupus-lifestyle.pdf" class="download-link">Download PDF</a>
-    </div>
-    
-    <div class="resource-card">
-      <h3>Treatment Guide</h3>
-      <p>Understanding medications and treatment strategies.</p>
-      <a href="../downloads/lupus-treatment.pdf" class="download-link">Download PDF</a>
-    </div>
-    </div>
-    
- 
-  
-  <a href="../index.html#conditions" class="back-button">← Back to All Conditions</a>
-</div>
-<footer>
-  <p>© 2025 Rheum One. Educational use only.</p>
-</footer>
+  <footer>
+    <p>© 2025 Rheum One. Educational use only.</p>
+  </footer>
 </body>
 </html>
