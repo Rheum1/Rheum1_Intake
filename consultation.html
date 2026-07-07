@@ -1,64 +1,337 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Consultation – RheumOne</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: #f4f7fc;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        h1 { color: #1a5f7a; }
-        .price { font-size: 24px; font-weight: bold; color: #1a5f7a; }
-        .info { color: #4a5568; line-height: 1.6; }
-        .note {
-            background: #fef9e7;
-            border-left: 4px solid #ecc94b;
-            padding: 15px;
-            margin: 20px 0;
-        }
-        /* Ensure the widget displays properly */
-        #square-widget {
-            min-height: 600px;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Schedule a phone consultation with RheumOne to clarify your rheumatology results">
+  <title>Rheum1 | Phone Consultation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* === EXACT SAME STYLES AS YOUR INDEX.HTML === */
+    :root {
+      --primary: #4c759e;
+      --primary-light: #4d88cc;
+      --secondary: #2f4f4f;
+      --accent: #e74c3c;
+      --light-bg: #f9fbfd;
+      --text: #333;
+      --text-light: #777;
+    }
+    
+    body {
+      margin: 0;
+      font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-bg) url('https://www.transparenttextures.com/patterns/purty-wood.png');
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    header img {
+      max-width: min(400px, 90%);
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    
+    header img:hover {
+      transform: scale(1.02);
+    }
+    
+    header h1,
+    header p {
+      margin: 0.5rem 0;
+    }
+    
+    nav {
+      background-color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    
+    nav li {
+      margin: 0 1rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    
+    nav a:hover {
+      background-color: rgba(51, 102, 153, 0.1);
+    }
+    
+    nav a.active {
+      background-color: var(--primary);
+      color: white;
+      border-radius: 4px;
+    }
+    
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    
+    .section h2 {
+      color: var(--secondary);
+      margin-top: 0;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-light);
+    }
+    
+    .price-box {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+      border-left: 6px solid var(--primary);
+      padding: 1.5rem 2rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    
+    .price-box .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+    
+    .price-box .price-label {
+      font-size: 1rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .info-card {
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .info-card .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .info-card h4 {
+      margin: 0.5rem 0;
+      color: var(--secondary);
+    }
+    
+    .info-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    
+    .note-box {
+      background: #fef9e7;
+      border-left: 4px solid #ecc94b;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+    
+    .note-box strong {
+      color: #744d0b;
+    }
+    
+    /* Square Widget Container */
+    #square-widget {
+      min-height: 700px;
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .section {
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+      margin-top: 2rem;
+    }
+    
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav li {
+        margin: 0.5rem 0;
+      }
+      
+      .price-box .price {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>📞 Need Clarification on Your Results?</h1>
-        <p class="info">Schedule a 15-minute phone consultation with Dr. [Name] to review your results and get answers to your questions.</p>
-        
-        <div class="price">$50 flat fee</div>
-        
-        <div class="note">
-            <strong>Important Note:</strong> This consultation is for <em>advice and clarification only</em>. It does not include prescribing medications.
-        </div>
-        
-        <h2>What to Expect:</h2>
-        <ul>
-            <li>You'll receive a confirmation email with your appointment time</li>
-            <li>Our team will call you at the scheduled time</li>
-            <li>You'll receive a text message with a secure video link</li>
-            <li>Simply click the link to join the call</li>
-        </ul>
-        
-        <h2>Book Your Consultation</h2>
-        <div id="square-widget">
-            <!-- Square Appointments Embed Code -->
-            <script src='https://squareup.com/appointments/buyer/widget/xyebg07msxvrvf/LWJ85SMWBNQYB.js'></script>
-        </div>
+
+<header>
+  <img src="assets/img/RheumOneLogoTM.png" alt="Rheum1 Logo" />
+  <h1>Phone Consultation – Need Clarification?</h1>
+  <p>Schedule a secure video call to review your results and get answers</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#conditions">Conditions</a></li>
+    <li><a href="index.html#survey">Survey</a></li>
+    <li><a href="consultation.html" class="active">Consultation</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="section">
+  <h2>📞 Results Clarification Consultation</h2>
+  
+  <p style="font-size: 1.1rem;">After receiving your lab results and medical packet, you may have questions or need guidance. Schedule a 15-minute phone consultation with Dr. Hunt to review your results and get the clarity you need.</p>
+  
+  <div class="price-box">
+    <p class="price-label">Flat Fee</p>
+    <p class="price">$50</p>
+    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: var(--text-light);">Includes a 15-minute consultation via secure video</p>
+  </div>
+  
+  <div class="note-box">
+    <strong>📋 Important Note:</strong> This consultation is for <em>advice and clarification only</em>. It does not include prescribing medications or providing treatment. The purpose is to help you understand your results and what they mean for your care.
+  </div>
+  
+  <h3>What to Expect</h3>
+  <div class="info-grid">
+    <div class="info-card">
+      <span class="emoji">📅</span>
+      <h4>Step 1: Book & Pay</h4>
+      <p>Select a time that works for you and complete the $50 payment securely via Square</p>
     </div>
+    <div class="info-card">
+      <span class="emoji">📧</span>
+      <h4>Step 2: Confirmation</h4>
+      <p>You'll receive a confirmation email with your appointment details</p>
+    </div>
+    <div class="info-card">
+      <span class="emoji">📱</span>
+      <h4>Step 3: We Call You</h4>
+      <p>At your scheduled time, our team will call you using Doximity secure video. You'll receive a text with a link to join the call</p>
+    </div>
+    <div class="info-card">
+      <span class="emoji">🩺</span>
+      <h4>Step 4: Clarify & Plan</h4>
+      <p>Discuss your results, ask questions, and get guidance on next steps</p>
+    </div>
+  </div>
+  
+  <h3>Book Your Consultation</h3>
+  <p>Select a date and time below. Payment is required at the time of booking.</p>
+  
+  <!-- Square Appointments Embed Widget -->
+  <div id="square-widget">
+    <!-- Replace this script src with YOUR actual Square embed code -->
+    <script src='https://squareup.com/appointments/buyer/widget/xyebg07msxvrvf/LWJ85SMWBNQYB.js'></script>
+  </div>
+  
+  <a href="index.html" class="back-link">← Back to Home</a>
+</section>
+
+<footer>
+  <p>© 2025 RheumOne. This site does not collect or store any personal health data. All processing occurs securely and privately within a HIPAA compliant ecosystem.</p>
+  <p>
+    <a href="privacy.html">Privacy Policy</a> | 
+    <a href="terms.html">Terms of Service</a>
+  </p>
+</footer>
+
 </body>
 </html>
