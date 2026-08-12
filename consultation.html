@@ -185,13 +185,6 @@
       color: #744d0b;
     }
     
-    /* Square Widget Container */
-    #square-widget {
-      min-height: 700px;
-      width: 100%;
-      margin-top: 1.5rem;
-    }
-    
     .back-link {
       display: inline-block;
       margin-top: 1.5rem;
@@ -202,6 +195,39 @@
     
     .back-link:hover {
       text-decoration: underline;
+    }
+    
+    .cta-box {
+      text-align: center;
+      margin: 30px 0;
+      padding: 30px;
+      background: #f0f7ff;
+      border-radius: 12px;
+      border: 2px solid var(--primary);
+    }
+    
+    .cta-box h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 1rem 3rem;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     
     /* Animation */
@@ -251,6 +277,11 @@
       .price-box .price {
         font-size: 2rem;
       }
+      
+      .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -289,49 +320,44 @@
     <strong>📋 Important Note:</strong> This consultation is for <em>advice and clarification only</em>. It does not include prescribing medications or providing treatment. The purpose is to help you understand your results and what they mean for your care.
   </div>
   
-  <h3>What to Expect</h3>
-  <div class="info-grid">
+  <!-- ===== NEW "HOW IT WORKS" SECTION ===== -->
+  <h3>How It Works</h3>
+  <div class="info-grid" style="margin-bottom: 2rem;">
     <div class="info-card">
       <span class="emoji">📅</span>
-      <h4>Step 1: Book & Pay</h4>
-      <p>Select a time that works for you and complete the $50 payment securely via Square</p>
+      <h4>Step 1: Book Your Time</h4>
+      <p>Click the button below to view available appointment times on our calendar. Select a time that works for you.</p>
     </div>
     <div class="info-card">
       <span class="emoji">📧</span>
-      <h4>Step 2: Confirmation</h4>
-      <p>You'll receive a confirmation email with your appointment details</p>
+      <h4>Step 2: Get Confirmation</h4>
+      <p>You'll receive an email confirmation from Google Calendar with your appointment details.</p>
+    </div>
+    <div class="info-card">
+      <span class="emoji">💳</span>
+      <h4>Step 3: Pay Before Your Visit</h4>
+      <p>24 hours before your appointment, you'll receive a secure payment link via email to complete the $50 fee.</p>
     </div>
     <div class="info-card">
       <span class="emoji">📱</span>
-      <h4>Step 3: We Call You</h4>
-      <p>At your scheduled time, our team will call you using Doximity secure video. You'll receive a text with a link to join the call</p>
-    </div>
-    <div class="info-card">
-      <span class="emoji">🩺</span>
-      <h4>Step 4: Clarify & Plan</h4>
-      <p>Discuss your results, ask questions, and get guidance on next steps</p>
+      <h4>Step 4: Join the Call</h4>
+      <p>At your scheduled time, you'll receive a text message with a secure Doximity video link. Click to join the call with Dr. Hunt.</p>
     </div>
   </div>
   
-  <h3>Book Your Consultation</h3>
-  <p>Select a date and time below. Payment is required at the time of booking.</p>
-  
-<!-- 
-    This is a sample code block showing how to add the Payment Link button 
-    to your consultation.html page.
--->
-
-<!-- YOUR EXISTING CONTENT ON consultation.html -->
-
-<h3>2. Pay the $50 Fee</h3>
-<p>After payment, you will be redirected to our calendar to select an appointment time. You will receive a text message before your appointment with a link to connect.</p>
-
-<!-- This is the button for the Square Payment Link -->
-<a href="https://square.link/u/la7FDrKM" 
-   target="_blank" 
-   style="background: var(--primary); color: white; text-decoration: none; padding: 1rem 2.5rem; border-radius: 6px; font-size: 1.1rem; font-weight: 600; display: inline-block;">
-   💳 Pay $50 Now
-</a>
+  <!-- ===== BOOKING BUTTON ===== -->
+  <div class="cta-box">
+    <h3>Ready to Schedule?</h3>
+    <p style="margin-bottom: 20px;">Click below to view available times on our calendar.</p>
+    <a href="https://calendar.google.com/appointments/schedules/AcZssZ2dcsMTucznf0BCpOUxGxpW_NcBpHvhQvRxFIbwHFbM7jGUNBMQbTWLVc2I-kRVP10DTZe3R5WZ" 
+       target="_blank" 
+       class="btn-primary">
+      📅 Book Your Appointment
+    </a>
+    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">
+      You will receive a payment link 24 hours before your appointment.
+    </p>
+  </div>
   
   <a href="index.html" class="back-link">← Back to Home</a>
 </section>
