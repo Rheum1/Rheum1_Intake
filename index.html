@@ -539,63 +539,118 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
-    /* ⬇️ ADD THE NEW PRICE BOX CSS HERE ⬇️ */
+   
 
-    /* ============================================
-       CONSULTATION PRICE BOX - PROFESSIONAL STYLING
-       ============================================ */
-    .consultation-price-box {
-      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
-      border: 2px solid var(--primary);
-      border-radius: 12px;
-      padding: 1.75rem 2rem;
-      margin: 1.5rem auto;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(76, 117, 158, 0.12), 0 2px 4px rgba(76, 117, 158, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
+  /* ============================================
+   CONSULTATION SECTION - COMPACT HORIZONTAL
+   ============================================ */
+.consultation-section {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+  border-left: 6px solid var(--secondary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 1.75rem 2rem;
+}
 
-    .consultation-price-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--primary-light));
-    }
+.consultation-content {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
 
-    .consultation-price-box .price-label {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--primary);
-      font-weight: 700;
-      margin: 0 0 0.5rem 0;
-    }
+.consultation-text p {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
 
-    .consultation-price-box .price {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin: 0;
-      line-height: 1;
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+.consultation-action {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-    .consultation-price-box .price-subtext {
-      margin: 0.75rem 0 0 0;
-      font-size: 0.95rem;
-      color: var(--text-light);
-      line-height: 1.5;
-    }
+.consultation-price-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(76, 117, 158, 0.12), 0 2px 4px rgba(76, 117, 158, 0.08);
+  position: relative;
+  overflow: hidden;
+}
 
-    /* ⬆️ END OF NEW PRICE BOX CSS ⬆️ */
+.consultation-price-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+}
+
+.consultation-price-box .price-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0 0 0.35rem 0;
+}
+
+.consultation-price-box .price {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.consultation-price-box .price-subtext {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.consultation-btn {
+  background: var(--secondary);
+  color: white;
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.consultation-btn:hover {
+  background: #1a3a3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile: stack the columns */
+@media (max-width: 768px) {
+  .consultation-content {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .consultation-section {
+    padding: 1.5rem;
+  }
+}
+    
 
     @media (max-width: 768px) {
       .assessment-card {
@@ -755,28 +810,32 @@ The program is designed to support — not replace — clinical judgment, offeri
 </section>
 
 <!-- ============================================ -->
-<!-- CONSULTATION SECTION - FULL WIDTH BELOW     -->
+<!-- CONSULTATION SECTION - COMPACT HORIZONTAL   -->
 <!-- ============================================ -->
 <section class="section consultation-section">
   <h2>Need Clarification on Your Results?</h2>
-  <p style="font-size: 1.1rem;">
-    After receiving your lab results and medical packet, you may have questions or need guidance. Schedule a phone consultation with Dr. Hunt to review your results and get the clarity you need.
-  </p>
+  
+  <div class="consultation-content">
+    <div class="consultation-text">
+      <p>
+        After receiving your lab results and medical packet, you may have questions or need guidance. Schedule a phone consultation with Dr. Hunt to review your results and get the clarity you need.
+      </p>
+      <div class="note-box" style="background: #fef9e7; margin: 1rem 0 0 0;">
+        <strong>📋 Important Note:</strong> This consultation is for <em>advice and clarification only</em>. It does not include prescribing medications or providing treatment.
+      </div>
+    </div>
 
- <div class="price-box consultation-price-box">
-  <p class="price-label">Flat Fee</p>
-  <p class="price">$50</p>
-  <p class="price-subtext">Includes a 30-minute consultation via secure video</p>
-</div>
+    <div class="consultation-action">
+      <div class="price-box consultation-price-box">
+        <p class="price-label">Flat Fee</p>
+        <p class="price">$50</p>
+        <p class="price-subtext">Includes a 30-minute consultation via secure video</p>
+      </div>
 
-  <div class="note-box" style="background: #fef9e7;">
-    <strong>📋 Important Note:</strong> This consultation is for <em>advice and clarification only</em>. It does not include prescribing medications or providing treatment. The purpose is to help you understand your results and what they mean for your care.
-  </div>
-
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="consultation.html" class="consultation-btn">
-      📞 Schedule a Consultation ($50)
-    </a>
+      <a href="consultation.html" class="consultation-btn">
+        📞 Schedule a Consultation
+      </a>
+    </div>
   </div>
 </section>
 
