@@ -511,7 +511,7 @@
       color: #666;
     }
 
-    /* ============================================
+       /* ============================================
        CONSULTATION SECTION - DYNAMIC STYLING
        ============================================ */
     .consultation-section {
@@ -538,6 +538,64 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
+
+    /* ⬇️ ADD THE NEW PRICE BOX CSS HERE ⬇️ */
+
+    /* ============================================
+       CONSULTATION PRICE BOX - PROFESSIONAL STYLING
+       ============================================ */
+    .consultation-price-box {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin: 1.5rem auto;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(76, 117, 158, 0.12), 0 2px 4px rgba(76, 117, 158, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .consultation-price-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    }
+
+    .consultation-price-box .price-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .consultation-price-box .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin: 0;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .consultation-price-box .price-subtext {
+      margin: 0.75rem 0 0 0;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ⬆️ END OF NEW PRICE BOX CSS ⬆️ */
 
     @media (max-width: 768px) {
       .assessment-card {
@@ -705,11 +763,11 @@ The program is designed to support — not replace — clinical judgment, offeri
     After receiving your lab results and medical packet, you may have questions or need guidance. Schedule a phone consultation with Dr. Hunt to review your results and get the clarity you need.
   </p>
 
-  <div class="price-box" style="background: white;">
-    <p class="price-label">Flat Fee</p>
-    <p class="price">$50</p>
-    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: var(--text-light);">Includes a 30-minute consultation via secure video</p>
-  </div>
+ <div class="price-box consultation-price-box">
+  <p class="price-label">Flat Fee</p>
+  <p class="price">$50</p>
+  <p class="price-subtext">Includes a 30-minute consultation via secure video</p>
+</div>
 
   <div class="note-box" style="background: #fef9e7;">
     <strong>📋 Important Note:</strong> This consultation is for <em>advice and clarification only</em>. It does not include prescribing medications or providing treatment. The purpose is to help you understand your results and what they mean for your care.
