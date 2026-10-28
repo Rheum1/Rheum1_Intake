@@ -970,14 +970,33 @@ The program is designed to support — not replace — clinical judgment, offeri
     }
   });
   
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
+    
+    if (!target) return;
+    
+    // Calculate position to center the section vertically
+    const targetRect = target.getBoundingClientRect();
+    const targetHeight = targetRect.height;
+    const viewportHeight = window.innerHeight;
+    
+    // How much to scroll from current position
+    const scrollOffset = targetRect.top - (viewportHeight - targetHeight) / 2;
+    
+    // Get current scroll position
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    window.scrollTo({
+      top: currentScroll + scrollOffset,
+      behavior: 'smooth'
     });
   });
+});
+  
 </script>
 
 </body>
