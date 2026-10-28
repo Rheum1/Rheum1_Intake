@@ -87,6 +87,7 @@
     nav a:hover {
       background-color: rgba(51, 102, 153, 0.1);
     }
+
     
     .section {
       max-width: 1000px;
@@ -372,6 +373,11 @@
     .section {
       animation: fadeIn 0.5s ease forwards;
     }
+
+    /* Offset for sticky navbar when scrolling to sections */
+section[id] {
+  scroll-margin-top: 80px;
+}
     
     .section:nth-child(2) { animation-delay: 0.1s; }
     .section:nth-child(3) { animation-delay: 0.2s; }
